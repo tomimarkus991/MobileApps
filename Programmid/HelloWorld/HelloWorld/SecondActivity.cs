@@ -87,7 +87,7 @@ namespace HelloWorld
                }
            };
 
-           _jagamine.Click += delegate
+            _jagamine.Click += delegate
            {
                try
                {
@@ -96,11 +96,11 @@ namespace HelloWorld
                    double c = Math.Round(a / b, 2);
                    _vastus.Text = Convert.ToString(c);
                }
-               catch(System.FormatException)
+               catch (System.FormatException)
                {
                    _vastus.Text = "You can enter only numbers";
                }
-               catch(System.NullReferenceException)
+               catch (System.NullReferenceException)
                {
                    _vastus.Text = "You can't divide by 0";
                }
