@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ColorChallenge</string>
+    <string name="action_settings">Settings</string>
+    <string name="red">RED</string>
+    <string name="orange">@string/orange</string>
+    <string name="yellow">@string/yellow</string>
+    <string name="green">@string/green</string>
+    <string name="blue">@string/blue</string>
+    <string name="indigo">@string/indigo</string>
+    <string name="violet">@string/violet</string>
+</resources>
