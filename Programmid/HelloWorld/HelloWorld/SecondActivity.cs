@@ -42,7 +42,7 @@ namespace HelloWorld
 
             _vastus = FindViewById<TextView>(Resource.Id.vastus);
 
-           _liitmine.Click += delegate
+            _liitmine.Click += delegate
            {
                try
                {
@@ -105,6 +105,12 @@ namespace HelloWorld
                    _vastus.Text = "You can't divide by 0";
                }
            };
+        }
+
+        private void HomeButton_Click(object sender, EventArgs e)
+        {
+            SetContentView(Resource.Layout.activity_main);
+            Toast.MakeText(this, "texttst", ToastLength.Short).Show();
         }
     }
 }
