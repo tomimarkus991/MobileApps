@@ -4,6 +4,7 @@ using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
 using System;
+using Android.Content;
 
 namespace Apps
 {
@@ -35,19 +36,23 @@ namespace Apps
         }
         private void Scene1_Click(object sender, EventArgs e)
         {
-            SetContentView(Resource.Layout.challenge1);
+            var intent = new Intent(this, typeof(Activity1));
+            this.StartActivity(intent);
         }
         private void Scene2_Click(object sender, EventArgs e)
         {
-            SetContentView(Resource.Layout.challenge2);
+            var intent = new Intent(this, typeof(Activity2));
+            this.StartActivity(intent);
         }
         private void Scene3_Click(object sender, EventArgs e)
         {
-            SetContentView(Resource.Layout.challenge3);
+            var intent = new Intent(this, typeof(Activity3));
+            this.StartActivity(intent);
         }
         private void Scene4_Click(object sender, EventArgs e)
         {
-            SetContentView(Resource.Layout.challenge4);
+            var intent = new Intent(this, typeof(Activity4));
+            this.StartActivity(intent);
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

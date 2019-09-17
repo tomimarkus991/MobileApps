@@ -12,13 +12,13 @@ using Android.Widget;
 
 namespace Apps
 {
-    [Activity(Label = "Activity1")]
-    public class Activity1 : Activity
+    [Activity(Label = "Activity3")]
+    public class Activity3 : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.challenge1);
+            SetContentView(Resource.Layout.challenge3);
 
             // Create your application here
         }
