@@ -6,8 +6,6 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minWidth="25px"
-        android:minHeight="25px"
         android:id="@+id/arv1" />
     <EditText
         android:layout_width="match_parent"
@@ -53,5 +51,5 @@
             android:layout_height="match_parent"
             android:id="@+id/vastus" />
     </LinearLayout>
-
 </LinearLayout>
+

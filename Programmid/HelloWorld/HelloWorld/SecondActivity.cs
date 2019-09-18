@@ -106,11 +106,5 @@ namespace HelloWorld
                }
            };
         }
-
-        private void HomeButton_Click(object sender, EventArgs e)
-        {
-            SetContentView(Resource.Layout.activity_main);
-            Toast.MakeText(this, "texttst", ToastLength.Short).Show();
-        }
     }
 }

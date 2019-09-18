@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout 
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:background="@color/black"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-<LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/linearLayout1">
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
         <TextView
-            android:text = "RED"
+            android:text="RED"
             android:background = "@color/red"
             android:textColor="@color/black"
             android:gravity="center"
@@ -40,7 +36,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/textView3" />
         <TextView
-            android:text="GREED"
+            android:text="GREEN"
             android:background = "@color/green"
             android:textColor="@color/black"
             android:gravity="center"
@@ -79,6 +75,4 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView7" />
-    </LinearLayout>
-</RelativeLayout>
-
+</LinearLayout>
