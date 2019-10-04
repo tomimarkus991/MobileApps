@@ -24,6 +24,9 @@ namespace X
         Button _relativeButton1;
         Button _relativeButton2;
         Button _relativeButton3;
+
+        // Battery App
+        Button _batteryAppButton;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -43,6 +46,8 @@ namespace X
             _relativeButton2 = FindViewById<Button>(Resource.Id.relativeButton2);
             _relativeButton3 = FindViewById<Button>(Resource.Id.relativeButton3);
 
+            _batteryAppButton = FindViewById<Button>(Resource.Id.batteryAppButton);
+
             // ühendame Click eventi meetodiga
 
             _calcButton.Click += CalcButton_Click;
@@ -55,6 +60,8 @@ namespace X
             _relativeButton1.Click += RelativeButton1_Click;
             _relativeButton2.Click += RelativeButton2_Click;
             _relativeButton3.Click += RelativeButton3_Click;
+
+            _batteryAppButton.Click += BatteryAppButton_Click;
         }
         private void CalcButton_Click(object sender, EventArgs e)
         {
@@ -94,6 +101,11 @@ namespace X
         private void RelativeButton3_Click(object sender, EventArgs e)
         {
             var intent = new Intent(this, typeof(RelativeChallenge3));
+            this.StartActivity(intent);
+        }
+        private void BatteryAppButton_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(BatteryApp));
             this.StartActivity(intent);
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
