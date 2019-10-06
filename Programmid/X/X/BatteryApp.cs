@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -16,32 +16,33 @@ namespace X
     [Activity(Label = "BatteryApp")]
     public class BatteryApp : Activity
     {
+        TextView _batteryState;
+        TextView _batteryChargeSource;
+        TextView _batteryChargeLevel;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.batteryApp);
             // Create your application here
 
-            var level = Battery.ChargeLevel; // returns 0.0 to 1.0 or 1.0 when on AC or no battery.
+            _batteryState = FindViewById<TextView>(Resource.Id.batteryState);
+            _batteryChargeSource = FindViewById<TextView>(Resource.Id.batteryChargeSource);
+            _batteryChargeLevel = FindViewById<TextView>(Resource.Id.batteryChargeLevel);
 
-            var state = Battery.State;
+            //var level = Battery.ChargeLevel; // returns 0.0 to 1.0 or 1.0 when on AC or no battery.
 
+            var state = Battery.State;           
+            
             switch (state)
             {
                 case BatteryState.Charging:
-                    // Currently charging
+                    _batteryState.Text = "Charging";
                     break;
                 case BatteryState.Full:
-                    // Battery is full
+                    _batteryState.Text = "Full";
                     break;
-                case BatteryState.Discharging:
-                case BatteryState.NotCharging:
-                    // Currently discharging battery or not being charged
-                    break;
-                case BatteryState.NotPresent:
-                // Battery doesn't exist in device (desktop computer)
                 case BatteryState.Unknown:
-                    // Unable to detect battery state
+                    _batteryState.Text = "Unable to detect battery state";
                     break;
             }
 
@@ -50,21 +51,35 @@ namespace X
             switch (source)
             {
                 case BatteryPowerSource.Battery:
-                    // Being powered by the battery
+                    _batteryChargeSource.Text = "Being powered by the battery";
                     break;
                 case BatteryPowerSource.AC:
-                    // Being powered by A/C unit
+                    _batteryChargeSource.Text = "Being powered by A/C unit";
                     break;
                 case BatteryPowerSource.Usb:
-                    // Being powered by USB cable
+                    _batteryChargeSource.Text = "Being powered by USB cable";
                     break;
                 case BatteryPowerSource.Wireless:
-                    // Powered via wireless charging
+                    _batteryChargeSource.Text = "Powered via wireless charging";
                     break;
                 case BatteryPowerSource.Unknown:
-                    // Unable to detect power source
+                    _batteryChargeSource.Text = "Unable to detect power source";
                     break;
             }
+
+            var level = Battery.ChargeLevel;
+            _batteryChargeLevel.Text = level.ToString();
+            Battery.BatteryInfoChanged += Battery_BatteryInfoChanged;
+        }
+        private void Battery_BatteryInfoChanged(object sender, BatteryInfoChangedEventArgs e)
+        {
+            var state = e.State;
+            var source = e.PowerSource;
+            var level = e.ChargeLevel;
+
+            _batteryState.Text = state.ToString();
+            _batteryChargeSource.Text = source.ToString();
+            _batteryChargeLevel.Text = level.ToString();
         }
     }
 }
