@@ -60,12 +60,15 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Scripts\BasicAdapter.cs" />
     <Compile Include="Scripts\Battery\BatteryApp.cs" />
     <Compile Include="Scripts\Calculator\CalculatorChallenge.cs" />
     <Compile Include="Scripts\LinearChallenge\LinearChallenge1.cs" />
     <Compile Include="Scripts\LinearChallenge\LinearChallenge2.cs" />
     <Compile Include="Scripts\LinearChallenge\LinearChallenge3.cs" />
     <Compile Include="Scripts\LinearChallenge\LinearChallenge4.cs" />
+    <Compile Include="Scripts\ListActivity1.cs" />
+    <Compile Include="Scripts\WeatherInfo.cs" />
     <Compile Include="Scripts\_Main\MainActivity.cs" />
     <Compile Include="Scripts\RelativeChallenge\RelativeChallenge1.cs" />
     <Compile Include="Scripts\RelativeChallenge\RelativeChallenge2.cs" />
@@ -165,7 +168,16 @@
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\viewList.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\weather_row.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
     Other similar extension points exist, see Microsoft.Common.targets.

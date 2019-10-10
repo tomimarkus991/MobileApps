@@ -30,6 +30,8 @@ namespace X
 
         // Wev View
         Button _webView;
+
+        Button _listView;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -53,6 +55,8 @@ namespace X
 
             _webView = FindViewById<Button>(Resource.Id.webView);
 
+            _listView = FindViewById<Button>(Resource.Id.adapter);
+
             // ühendame Click eventi meetodiga
 
             _calcButton.Click += CalcButton_Click;
@@ -69,6 +73,8 @@ namespace X
             _batteryAppButton.Click += BatteryAppButton_Click;
 
             _webView.Click += WebView_Click;
+
+            _listView.Click += ListView_Click;
         }
         private void CalcButton_Click(object sender, EventArgs e)
         {
@@ -118,6 +124,11 @@ namespace X
         private void WebView_Click(object sender, EventArgs e)
         {
             var intent = new Intent(this, typeof(webView));
+            this.StartActivity(intent);
+        }
+        private void ListView_Click (object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(Scripts.ListActivity1));
             this.StartActivity(intent);
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
