@@ -32,6 +32,8 @@ namespace X
         Button _webView;
 
         Button _listView;
+
+        Button _carView;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -57,6 +59,8 @@ namespace X
 
             _listView = FindViewById<Button>(Resource.Id.adapter);
 
+            _carView = FindViewById<Button>(Resource.Id.CarView);
+
             // ühendame Click eventi meetodiga
 
             _calcButton.Click += CalcButton_Click;
@@ -75,6 +79,8 @@ namespace X
             _webView.Click += WebView_Click;
 
             _listView.Click += ListView_Click;
+
+            _carView.Click += CarView_Click;
         }
         private void CalcButton_Click(object sender, EventArgs e)
         {
@@ -129,6 +135,11 @@ namespace X
         private void ListView_Click (object sender, EventArgs e)
         {
             var intent = new Intent(this, typeof(Scripts.ListActivity1));
+            this.StartActivity(intent);
+        }
+        private void CarView_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(Scripts.ListViewFolder.Car.CarAcitivity));
             this.StartActivity(intent);
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
