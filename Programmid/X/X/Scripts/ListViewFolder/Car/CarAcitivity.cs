@@ -24,19 +24,20 @@ namespace X.Scripts.ListViewFolder.Car
 
             var list = FindViewById<ListView>(Resource.Id.listView1);
 
-            var _items = new List<CarInfo>()
+            Random rnd = new Random();
+            var _items = new List<CarInfo>();
+
+            for (int i = 0; i < rnd.Next(20, 40); i++)
             {
-                new CarInfo(){Manufacturer = "Fiat", Model = "biats", ReleaseYear = "9674", HP = "10000"},
-                new CarInfo(){Manufacturer = "Nissan", Model = "Kaskai", ReleaseYear = "1236", HP = "5000"},
-                new CarInfo(){Manufacturer = "Subaru", Model = "Jubanus", ReleaseYear = "8764", HP = "7000"},
-                new CarInfo(){Manufacturer = "Lexus", Model = "Keksus", ReleaseYear = "5755", HP = "9000"},
-                new CarInfo(){Manufacturer = "Toyota", Model = "Sojota", ReleaseYear = "323", HP = "2000"},
-                new CarInfo(){Manufacturer = "Chervolet", Model = "Crocs", ReleaseYear = "1", HP = "1000"},
-                new CarInfo(){Manufacturer = "Tesla", Model = "Broks", ReleaseYear = "32123", HP = "200"},
-                new CarInfo(){Manufacturer = "Renault", Model = "Bešoo", ReleaseYear = "13219", HP = "12000"},
-                new CarInfo(){Manufacturer = "Ford", Model = "shrek", ReleaseYear = "1990", HP = "200"},
-                new CarInfo(){Manufacturer = "Audi", Model = "r6", ReleaseYear = "1990", HP = "60"}
-            };
+                _items.Add(
+                    new CarInfo()
+                    {
+                        Manufacturer = Faker.Company.Name(),
+                        Model = Faker.Name.First(),
+                        ReleaseYear = rnd.Next(1990, 2019).ToString(),
+                        HP = rnd.Next(2000, 8000).ToString()
+                    });
+            }
 
             list.Adapter = new CarAdapter(this, _items);
         }
