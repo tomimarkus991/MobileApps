@@ -29,8 +29,6 @@ namespace X
             _batteryChargeSource = FindViewById<TextView>(Resource.Id.batteryChargeSource);
             _batteryChargeLevel = FindViewById<TextView>(Resource.Id.batteryChargeLevel);
 
-            //var level = Battery.ChargeLevel; // returns 0.0 to 1.0 or 1.0 when on AC or no battery.
-
             var state = Battery.State;           
             
             switch (state)

@@ -27,12 +27,12 @@ namespace X.Scripts.ListViewFolder.Car
             Random rnd = new Random();
             var _items = new List<CarInfo>();
 
-            for (int i = 0; i < rnd.Next(20, 40); i++)
+            for (int i = 0; i < rnd.Next(40, 80); i++)
             {
                 _items.Add(
                     new CarInfo()
                     {
-                        Manufacturer = Faker.Company.Name(),
+                        Manufacturer = Faker.Name.Last(),
                         Model = Faker.Name.First(),
                         ReleaseYear = rnd.Next(1990, 2019).ToString(),
                         HP = rnd.Next(2000, 8000).ToString()
