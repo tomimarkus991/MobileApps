@@ -129,8 +129,8 @@ namespace X
         }
         private void WebView_Click(object sender, EventArgs e)
         {
-            var intent = new Intent(this, typeof(web_view));
-            this.StartActivity(intent);
+            //var intent = new Intent(this, typeof(web_view));
+            //this.StartActivity(intent);
         }
         private void ListView_Click (object sender, EventArgs e)
         {
