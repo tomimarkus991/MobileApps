@@ -39,7 +39,7 @@ namespace X
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.activity_main);
+            SetContentView(Resource.Layout.layout_main);
 
             // ühendame nupuga
             _calcButton = FindViewById<Button>(Resource.Id.calcButton);
@@ -55,7 +55,7 @@ namespace X
 
             _batteryAppButton = FindViewById<Button>(Resource.Id.batteryAppButton);
 
-            _webView = FindViewById<Button>(Resource.Id.webView);
+            _webView = FindViewById<Button>(Resource.Id.web_view);
 
             _listView = FindViewById<Button>(Resource.Id.adapter);
 
@@ -129,7 +129,7 @@ namespace X
         }
         private void WebView_Click(object sender, EventArgs e)
         {
-            var intent = new Intent(this, typeof(webView));
+            var intent = new Intent(this, typeof(web_view));
             this.StartActivity(intent);
         }
         private void ListView_Click (object sender, EventArgs e)

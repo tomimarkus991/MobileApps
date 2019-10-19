@@ -22,7 +22,7 @@ namespace X
             base.OnCreate(savedInstanceState);
 
             // Create your application here
-            SetContentView(Resource.Layout.webView);
+            SetContentView(Resource.Layout.web_view);
 
             var _webView = FindViewById<WebView>(Resource.Id.webView1);
             _webView.Settings.JavaScriptEnabled = true;

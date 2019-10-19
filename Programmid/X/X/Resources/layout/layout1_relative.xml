@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background = "@color/black"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+  <TextView
+      android:text="Red"
+      android:background = "@color/red"
+      android:textColor="@color/black"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:id="@+id/textView1" />
+  <TextView
+      android:text="Orange"
+      android:background = "@color/orange"
+      android:textColor="@color/black"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:id="@+id/textView2" />
+  <TextView
+      android:text="Yellow"
+      android:background = "@color/yellow"
+      android:textColor="@color/black"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:id="@+id/textView3" />
+  <TextView
+      android:text="Green"
+      android:background = "@color/green"
+      android:textColor="@color/black"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:id="@+id/textView4" />
+  <TextView
+      android:text="Blue"
+      android:background = "@color/blue"
+      android:textColor="@color/white"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:id="@+id/textView5" />
+  <TextView
+      android:text="Indigo"
+      android:background = "@color/indigo"
+      android:textColor="@color/white"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:id="@+id/textView6" />
+  <TextView
+      android:text="Violet"
+      android:background = "@color/violet"
+      android:textColor="@color/black"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:id="@+id/textView7" />
+</RelativeLayout>
