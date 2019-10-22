@@ -118,29 +118,41 @@
           android:layout_height="wrap_content"
           android:id="@+id/web_view" />
       <TextView
-          android:text="Adapter"
+          android:text="Weather Info"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:textColor="@color/white"
           android:gravity="center"
           android:id="@+id/textView6" />
       <Button
-          android:text="Adapter"
+          android:text="Weather Info"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:id="@+id/adapter" />
       <TextView
-          android:text="Second"
+          android:text="Car view"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:textColor="@color/white"
           android:gravity="center"
           android:id="@+id/textView6" />
       <Button
-          android:text="Second"
+          android:text="Car view"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:id="@+id/CarView" />
+      <TextView
+          android:text="Api"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textColor="@color/white"
+          android:gravity="center"
+          android:id="@+id/textView7" />
+      <Button
+          android:text="Api"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/apiView" />
     </LinearLayout>
   </RelativeLayout>
 </ScrollView>

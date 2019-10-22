@@ -29,14 +29,13 @@ namespace X.Scripts.ListViewFolder.Car
 
             for (int i = 0; i < rnd.Next(40, 80); i++)
             {
-                _items.Add(
-                    new CarInfo()
-                    {
-                        Manufacturer = Faker.Name.Last(),
-                        Model = Faker.Name.First(),
-                        ReleaseYear = rnd.Next(1990, 2019).ToString(),
-                        HP = rnd.Next(2000, 8000).ToString()
-                    });
+                _items.Add(new CarInfo()
+                {
+                    Manufacturer = Faker.Name.Last(),
+                    Model = Faker.Name.First(),
+                    ReleaseYear = rnd.Next(1990, 2019).ToString(),
+                    HP = rnd.Next(2000, 8000).ToString()
+                });
             }
 
             list.Adapter = new CarAdapter(this, _items);

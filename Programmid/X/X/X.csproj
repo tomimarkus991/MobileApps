@@ -60,6 +60,7 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Scripts\Api\Api.cs" />
     <Compile Include="Scripts\ListViewFolder\Car\CarAdapter.cs" />
     <Compile Include="Scripts\ListViewFolder\Car\CarAcitivity.cs" />
     <Compile Include="Scripts\ListViewFolder\Car\CarInfo.cs" />
@@ -70,7 +71,7 @@
     <Compile Include="Scripts\LinearChallenge\LinearChallenge2.cs" />
     <Compile Include="Scripts\LinearChallenge\LinearChallenge3.cs" />
     <Compile Include="Scripts\LinearChallenge\LinearChallenge4.cs" />
-    <Compile Include="Scripts\ListViewFolder\Weather\ListActivity1.cs" />
+    <Compile Include="Scripts\ListViewFolder\Weather\WeatherActivity.cs" />
     <Compile Include="Scripts\ListViewFolder\Weather\WeatherInfo.cs" />
     <Compile Include="Scripts\_Main\MainActivity.cs" />
     <Compile Include="Scripts\RelativeChallenge\RelativeChallenge1.cs" />
@@ -184,14 +185,15 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\layout\BatteryLayout\" />
-    <Folder Include="Resources\layout\CalculatorLayout\" />
-    <Folder Include="Resources\layout\CarLayout\" />
-    <Folder Include="Resources\layout\LinearLayout\" />
-    <Folder Include="Resources\layout\MainLayout\" />
-    <Folder Include="Resources\layout\RelativeLayout\" />
-    <Folder Include="Resources\layout\WeatherLayout\" />
-    <Folder Include="Resources\layout\WebViewLayout\" />
+    <ProjectReference Include="..\Api.Core\Api.Core.csproj">
+      <Project>{ae049e8b-b34f-4490-a3d2-39531e7b847d}</Project>
+      <Name>Api.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\api.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

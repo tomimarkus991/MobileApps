@@ -9,19 +9,20 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Api.Core;
 
 namespace X.Scripts
 {
-    class BasicAdapter : BaseAdapter<WeatherInfo>
+    class BasicAdapter : BaseAdapter<WeatherID.ConsolidatedWeather>
     {
-        List<WeatherInfo> _items;
+        List<WeatherID.ConsolidatedWeather> _items;
         Activity _context;
-        public BasicAdapter(Activity context, List<WeatherInfo> items) : base()
+        public BasicAdapter(Activity context, List<WeatherID.ConsolidatedWeather> items) : base()
         {
             _items = items;
             _context = context;
         }
-        public override WeatherInfo this[int position]
+        public override WeatherID.ConsolidatedWeather this[int position]
         {
             get { return _items[position]; }
         }
@@ -42,9 +43,9 @@ namespace X.Scripts
             {
                 view = _context.LayoutInflater.Inflate(Resource.Layout.weather_row, null);
             }
-            view.FindViewById<TextView>(Resource.Id.textView1).Text = item.Name;
-            view.FindViewById<TextView>(Resource.Id.textView2).Text = item.Temperature;
-            view.FindViewById<TextView>(Resource.Id.textView3).Text = item.WindSpeed;
+            view.FindViewById<TextView>(Resource.Id.textView1).Text = item.Id.ToString();
+            view.FindViewById<TextView>(Resource.Id.textView2).Text = item.Weather_state_name;
+            view.FindViewById<TextView>(Resource.Id.textView3).Text = item.The_temp.ToString();
             return view;
         }
     }
