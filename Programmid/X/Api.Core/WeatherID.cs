@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Api.Core
 {
@@ -23,6 +22,8 @@ namespace Api.Core
             public int Humidity { get; set; }
             public double Visibility { get; set; }
             public int Predictability { get; set; }
+            public List<RootObject> Results { get; set; }
+            public List<ConsolidatedWeather> Consolidated_weather { get; set; }
         }
 
         public class Parent

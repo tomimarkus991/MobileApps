@@ -1,49 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
+﻿using Android.App;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Api.Core;
 
-namespace X.Scripts
+namespace X.Scripts.ListViewFolder.Weather
 {
     [Activity(Label = "listActivity")]
     public class WeatherActivity : ListActivity
     {
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override async void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            //SetContentView(Resource.Layout.weather_row);
+            var queryString = "https://www.metaweather.com/api/location/44418/";
 
-            var queryString = "https://www.metaweather.com/api/location/search/?query=london";
-            var data = DataService.GetDataService(queryString);
+            //var data = await Api.Core.DataService.GetDataFromService(queryString);
 
-            //var items = new List<WeatherInfo>()
-            //{
-            //    new WeatherInfo(){Name = "Esmaspäev", Temperature = "12C", WindSpeed = "4m/s"},
-            //    new WeatherInfo(){Name = "Teisipäev", Temperature = "13C", WindSpeed = "5m/s"},
-            //    new WeatherInfo(){Name = "Kolmapäev", Temperature = "14C", WindSpeed = "6m/s"}
-            //};
+            var data = await Api.Core.DataService.GetDataFromService(queryString);
 
-            //ListAdapter = new BasicAdapter(this, items);
+            var weather = data as WeatherID.ConsolidatedWeather;
 
-            var items = new List<WeatherID.ConsolidatedWeather>()
-            {
-                new WeatherID.ConsolidatedWeather(){Id = WeatherID.ConsolidatedWeather, }
-            };
+            //ListAdapter = new WeatherAdapter(this, weather.);
 
-            ListAdapter = new BasicAdapter(this, items);
+            ListAdapter = new WeatherAdapter(this, weather.Consolidated_weather);
 
-
-            ListView.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
-            {
-                Toast.MakeText(Application, ((TextView)args.View).Text, ToastLength.Short).Show();
-            };
         }
     }
 }

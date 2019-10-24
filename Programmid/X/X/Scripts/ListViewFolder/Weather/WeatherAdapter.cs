@@ -4,13 +4,13 @@ using Android.Widget;
 using Api.Core;
 using System.Collections.Generic;
 
-namespace X.Scripts.ListViewFolder
+namespace X.Scripts
 {
-    class BasicAdapter : BaseAdapter<WeatherID.ConsolidatedWeather>
+    class WeatherAdapter : BaseAdapter<WeatherID.ConsolidatedWeather>
     {
         List<WeatherID.ConsolidatedWeather> _items;
         Activity _context;
-        public BasicAdapter(Activity context, List<WeatherID.ConsolidatedWeather> items) : base()
+        public WeatherAdapter(Activity context, List<WeatherID.ConsolidatedWeather> items) : base()
         {
             _items = items;
             _context = context;

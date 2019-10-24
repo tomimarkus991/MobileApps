@@ -140,7 +140,7 @@ namespace X
         }
         private void ListView_Click (object sender, EventArgs e)
         {
-            var intent = new Intent(this, typeof(Scripts.WeatherActivity));
+            var intent = new Intent(this, typeof(Scripts.ListViewFolder.Weather.WeatherActivity));
             this.StartActivity(intent);
         }
         private void CarView_Click(object sender, EventArgs e)
@@ -150,7 +150,7 @@ namespace X
         }
         private void ApiView_Click(object sender, EventArgs e)
         {
-            var intent = new Intent(this, typeof(Scripts.Api.Api));
+            var intent = new Intent(this, typeof(Scripts.ListViewFolder.Weather.WeatherActivity));
             this.StartActivity(intent);
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
