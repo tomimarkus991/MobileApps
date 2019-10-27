@@ -10,19 +10,14 @@ namespace X.Scripts.ListViewFolder.Weather
         protected override async void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            //SetContentView(Resource.Layout.weather_row);
-            var queryString = "https://www.metaweather.com/api/location/44418/";
 
-            //var data = await Api.Core.DataService.GetDataFromService(queryString);
+            var queryString = "https://www.metaweather.com/api/location/44418/";
 
             var data = await Api.Core.DataService.GetDataFromService(queryString);
 
             var weather = data as WeatherID.ConsolidatedWeather;
 
-            //ListAdapter = new WeatherAdapter(this, weather.);
-
             ListAdapter = new WeatherAdapter(this, weather.Consolidated_weather);
-
         }
     }
 }

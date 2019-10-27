@@ -2,6 +2,7 @@
 using Android.Views;
 using Android.Widget;
 using Api.Core;
+using System;
 using System.Collections.Generic;
 
 namespace X.Scripts
@@ -36,7 +37,8 @@ namespace X.Scripts
             {
                 view = _context.LayoutInflater.Inflate(Resource.Layout.weather_row, null);
             }
-            view.FindViewById<TextView>(Resource.Id.textView1).Text = item.Id.ToString();
+            view.FindViewById<TextView>(Resource.Id.textView1).Text = item.Wind_speed.ToString();
+            //view.FindViewById<TextView>(Resource.Id.textView1).Text = Math.Round(item.Wind_speed.ToString(), 2);
             view.FindViewById<TextView>(Resource.Id.textView2).Text = item.Weather_state_name;
             view.FindViewById<TextView>(Resource.Id.textView3).Text = item.The_temp.ToString();
             return view;
