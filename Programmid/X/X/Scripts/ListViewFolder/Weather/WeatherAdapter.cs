@@ -2,7 +2,6 @@
 using Android.Views;
 using Android.Widget;
 using Api.Core;
-using System;
 using System.Collections.Generic;
 
 namespace X.Scripts

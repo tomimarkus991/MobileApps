@@ -28,13 +28,13 @@ namespace X
         // Battery App
         Button _batteryAppButton;
 
-        // Wev View
+        // Web View
         Button _webView;
 
-        Button _listView;
-
+        // Car View
         Button _carView;
 
+        // Weather Api
         Button _apiView;
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -59,8 +59,6 @@ namespace X
 
             _webView = FindViewById<Button>(Resource.Id.web_view);
 
-            _listView = FindViewById<Button>(Resource.Id.adapter);
-
             _carView = FindViewById<Button>(Resource.Id.CarView);
 
             _apiView = FindViewById<Button>(Resource.Id.apiView);
@@ -81,8 +79,6 @@ namespace X
             _batteryAppButton.Click += BatteryAppButton_Click;
 
             _webView.Click += WebView_Click;
-
-            _listView.Click += ListView_Click;
 
             _carView.Click += CarView_Click;
 
@@ -137,11 +133,6 @@ namespace X
         {
             //var intent = new Intent(this, typeof(Scripts.w));
             //this.StartActivity(intent);
-        }
-        private void ListView_Click (object sender, EventArgs e)
-        {
-            var intent = new Intent(this, typeof(Scripts.ListViewFolder.Weather.WeatherActivity));
-            this.StartActivity(intent);
         }
         private void CarView_Click(object sender, EventArgs e)
         {

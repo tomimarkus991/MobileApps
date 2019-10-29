@@ -118,18 +118,6 @@
           android:layout_height="wrap_content"
           android:id="@+id/web_view" />
       <TextView
-          android:text="Weather Info"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:textColor="@color/white"
-          android:gravity="center"
-          android:id="@+id/textView6" />
-      <Button
-          android:text="Weather Info"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:id="@+id/adapter" />
-      <TextView
           android:text="Car view"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
