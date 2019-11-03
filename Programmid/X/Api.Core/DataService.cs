@@ -14,7 +14,7 @@ namespace Api.Core
             dynamic data = null;
             if (response != null)
             {
-                data = JsonConvert.DeserializeObject<WeatherID.ConsolidatedWeather>(response.ToString());
+                data = JsonConvert.DeserializeObject<Weather>(response.ToString());
             }
             return data;
         }

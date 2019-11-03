@@ -34,14 +34,14 @@ namespace X
         // Car View
         Button _carView;
 
-        // Weather Api
+        // Main Api
         Button _apiView;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.layout_main);
+            // Set our view from the "Main" layout resource
+            SetContentView(Resource.Layout.layout_Main);
 
             // ühendame nupuga
             _calcButton = FindViewById<Button>(Resource.Id.calcButton);
@@ -141,7 +141,7 @@ namespace X
         }
         private void ApiView_Click(object sender, EventArgs e)
         {
-            var intent = new Intent(this, typeof(Scripts.ListViewFolder.Weather.WeatherActivity));
+            var intent = new Intent(this, typeof(Scripts.ListViewFolder.Main.MainActivity));
             this.StartActivity(intent);
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
