@@ -20,7 +20,7 @@ namespace Api.Core
         public int Humidity { get; set; }
         public double Visibility { get; set; }
         public int Predictability { get; set; }
-        public List<WeatherInfo> Results { get; set; }
+        public List<MainWeather> Results { get; set; }
         public List<ConsolidatedWeather> Consolidated_weather { get; set; }
     }
 
@@ -40,7 +40,7 @@ namespace Api.Core
         public int Crawl_rate { get; set; }
     }
 
-    public class WeatherInfo
+    public class MainWeather
     {
         public List<ConsolidatedWeather> Consolidated_weather { get; set; }
         public DateTime Time { get; set; }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace X.Scripts.ListViewFolder.Weather
 {
     [Activity(Label = "listActivity")]
-    public class WeatherActivity : ListActivity
+    public class WeatherActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -29,16 +29,21 @@ namespace X.Scripts.ListViewFolder.Weather
 
             var searchField = FindViewById<EditText>(Resource.Id.searchEditText);
             var searchButton = FindViewById<Button>(Resource.Id.searchButton);
-            var weatherListView = FindViewById<ListView>(Resource.Id.weatherListView);
+            var weatherListView = FindViewById<ListView>(Resource.Id.list);
 
             searchButton.Click += async delegate
             {
-                List<Api.Core.WeatherInfo> _woe;
-                var asi = _woe
+                LocationId location = new LocationId();
+                var woeidLocation = location.Woeid.ToString(); // saab woeid kätte
 
-                var searchText = searchField.Text;
-                var queryString = "https://www.metaweather.com/api/location/search/?query=" + searchText;
-                var data = await DataService.GetDataFromService(queryString);
+                var woeid2 = await DataService.GetDataFromLocation(woeidLocation); // võtab data
+                
+
+                var searchText = searchField.Text; // paneb searchtexti selleks milleks kasutaja sisestas
+                searchText = woeidLocation; // muudab selle woeidks
+
+                var queryString = "https://www.metaweather.com/api/location/search/?query=" + searchText; // otsib seda woeid'd
+                var data = await DataService.GetDataFromService(queryString);// võtab data
                 weatherListView.Adapter = new WeatherAdapter(this, data.Results);
             };
         }

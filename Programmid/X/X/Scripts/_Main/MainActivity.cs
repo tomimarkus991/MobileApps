@@ -41,7 +41,7 @@ namespace X
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "Main" layout resource
-            SetContentView(Resource.Layout.layout_Main);
+            SetContentView(Resource.Layout.layout_main);
 
             // ühendame nupuga
             _calcButton = FindViewById<Button>(Resource.Id.calcButton);
@@ -141,7 +141,7 @@ namespace X
         }
         private void ApiView_Click(object sender, EventArgs e)
         {
-            var intent = new Intent(this, typeof(Scripts.ListViewFolder.Main.MainActivity));
+            var intent = new Intent(this, typeof(Scripts.ListViewFolder.Weather.WeatherActivity));
             this.StartActivity(intent);
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
