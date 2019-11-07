@@ -6,16 +6,16 @@ using System.Collections.Generic;
 
 namespace X.Scripts
 {
-    class WeatherAdapter : BaseAdapter<Api.Core.MainWeather>
+    class WeatherAdapter : BaseAdapter<Api.Core.ConsolidatedWeather>
     {
-        List<MainWeather> _items;
+        List<ConsolidatedWeather> _items;
         Activity _context;
-        public WeatherAdapter(Activity context, List<MainWeather> items) : base()
+        public WeatherAdapter(Activity context, List<ConsolidatedWeather> items) : base()
         {
             _items = items;
             _context = context;
         }
-        public override MainWeather this[int position]
+        public override ConsolidatedWeather this[int position]
         {
             get { return _items[position]; }
         }
@@ -36,10 +36,11 @@ namespace X.Scripts
             {
                 view = _context.LayoutInflater.Inflate(Resource.Layout.weather_row, null);
             }
-            view.FindViewById<TextView>(Resource.Id.textView1).Text = item.Consolidated_weather[position].Min_temp.ToString();
+            //view.FindViewById<TextView>(Resource.Id.textView1).Text = item.Consolidated_weather[position].Min_temp.ToString();
+            view.FindViewById<TextView>(Resource.Id.textView1).Text = item.Wind_speed.ToString();
             //view.FindViewById<TextView>(Resource.Id.textView1).Text = Math.Round(item.Wind_speed.ToString(), 2);
-            view.FindViewById<TextView>(Resource.Id.textView2).Text = item.Consolidated_weather[position].Weather_state_name;
-            view.FindViewById<TextView>(Resource.Id.textView3).Text = item.Consolidated_weather[position].The_temp.ToString();
+            //view.FindViewById<TextView>(Resource.Id.textView2).Text = item.Consolidated_weather[position].Weather_state_name;
+            //view.FindViewById<TextView>(Resource.Id.textView3).Text = item.Consolidated_weather[position].The_temp.ToString();
             return view;
         }
     }

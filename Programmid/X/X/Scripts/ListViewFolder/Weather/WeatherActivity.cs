@@ -33,18 +33,20 @@ namespace X.Scripts.ListViewFolder.Weather
 
             searchButton.Click += async delegate
             {
-                LocationId location = new LocationId();
-                var woeidLocation = location.Woeid.ToString(); // saab woeid kätte
 
-                var woeid2 = await DataService.GetDataFromLocation(woeidLocation); // võtab data
-                
+                string cityName = searchField.Text; // võtab searchtexti selleks milleks kasutaja sisestas
+                string cityNameString = "https://www.metaweather.com/api/location/search/?query=" + cityName;
 
-                var searchText = searchField.Text; // paneb searchtexti selleks milleks kasutaja sisestas
-                searchText = woeidLocation; // muudab selle woeidks
+                //LocationId location = new LocationId();
+                //string woeidLocation = location.Woeid.ToString(); // saab woeid kätte ja muudab stringiks
 
-                var queryString = "https://www.metaweather.com/api/location/search/?query=" + searchText; // otsib seda woeid'd
-                var data = await DataService.GetDataFromService(queryString);// võtab data
-                weatherListView.Adapter = new WeatherAdapter(this, data.Results);
+                var woeid2 = await DataService.GetDataFromLocation(cityNameString);
+
+                string searchWoeid = woeid2[0].Woeid.ToString();
+
+                string queryString = "https://www.metaweather.com/api/location/" + searchWoeid;
+                var data = await DataService.GetDataFromService(queryString);
+                weatherListView.Adapter = new WeatherAdapter(this, data.Consolidated_weather);
             };
         }
     }
