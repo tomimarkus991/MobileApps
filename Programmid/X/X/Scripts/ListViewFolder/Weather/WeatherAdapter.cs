@@ -37,13 +37,9 @@ namespace X.Scripts
             {
                 view = _context.LayoutInflater.Inflate(Resource.Layout.weather_row, null);
             }
-            //view.FindViewById<TextView>(Resource.Id.textView1).Text = item.Consolidated_weather[position].Min_temp.ToString();
-            view.FindViewById<TextView>(Resource.Id.textView1).Text = Math.Round(item.Wind_speed, 2).ToString();
-            view.FindViewById<TextView>(Resource.Id.textView2).Text = Math.Round(item.The_temp, 2).ToString();
-            view.FindViewById<TextView>(Resource.Id.textView3).Text = item.Weather_state_name;
-            //view.FindViewById<TextView>(Resource.Id.textView1).Text = Math.Round(item.Wind_speed.ToString(), 2);
-            //view.FindViewById<TextView>(Resource.Id.textView2).Text = item.Consolidated_weather[position].Weather_state_name;
-            //view.FindViewById<TextView>(Resource.Id.textView3).Text = item.Consolidated_weather[position].The_temp.ToString();
+            view.FindViewById<TextView>(Resource.Id.textView1).Text = item.Weather_state_name;
+            view.FindViewById<TextView>(Resource.Id.textView2).Text = Math.Round(item.The_temp, 2).ToString() + " (℃)";
+            view.FindViewById<TextView>(Resource.Id.textView3).Text = Math.Round(item.Wind_speed, 2).ToString() + " (m/s)";
             return view;
         }
     }

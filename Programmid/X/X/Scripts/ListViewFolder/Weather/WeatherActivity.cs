@@ -1,11 +1,10 @@
-﻿using Android.App;
+﻿using System;
+using Android.App;
 using Android.OS;
+using Android.Runtime;
 using Android.Widget;
 using Api.Core;
-using System.Collections.Generic;
-using Newtonsoft.Json;
-using System.Net.Http;
-using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace X.Scripts.ListViewFolder.Weather
 {
@@ -14,16 +13,6 @@ namespace X.Scripts.ListViewFolder.Weather
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            //base.OnCreate(savedInstanceState);
-
-            //var queryString = "https://www.metaweather.com/api/location/44418/";
-
-            //var data = await Api.Core.DataService.GetDataFromService(queryString);
-
-            //var weather = data as Weather;
-
-            //ListAdapter = new WeatherAdapter(this, weather.Consolidated_weather);
-
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.weather_main_layout);
 
@@ -31,14 +20,12 @@ namespace X.Scripts.ListViewFolder.Weather
             var searchButton = FindViewById<Button>(Resource.Id.searchButton);
             var weatherListView = FindViewById<ListView>(Resource.Id.list);
 
+            ShakeButtonClick();
+
             searchButton.Click += async delegate
             {
-
                 string cityName = searchField.Text; // võtab searchtexti selleks milleks kasutaja sisestas
                 string cityNameString = "https://www.metaweather.com/api/location/search/?query=" + cityName;
-
-                //LocationId location = new LocationId();
-                //string woeidLocation = location.Woeid.ToString(); // saab woeid kätte ja muudab stringiks
 
                 var woeid2 = await DataService.GetDataFromLocation(cityNameString);
 
@@ -48,6 +35,16 @@ namespace X.Scripts.ListViewFolder.Weather
                 var data = await DataService.GetDataFromService(queryString);
                 weatherListView.Adapter = new WeatherAdapter(this, data.Consolidated_weather);
             };
+        }
+        public void ShakeButtonClick()
+        {
+            Accelerometer.ShakeDetected += Accelerometer_ShakeDetected;
+            Accelerometer.Start(SensorSpeed.Game);
+        }
+        public void Accelerometer_ShakeDetected(object sender, EventArgs e) // Here's what shaking does
+        {
+            var searchButton = FindViewById<Button>(Resource.Id.searchButton);
+            searchButton.PerformClick();
         }
     }
 }
