@@ -1,9 +1,9 @@
 ﻿using Android.App;
 using Android.Views;
 using Android.Widget;
-using WeatherApi.Core;
 using System;
 using System.Collections.Generic;
+using WeatherApi.Core;
 
 namespace X.Scripts
 {
