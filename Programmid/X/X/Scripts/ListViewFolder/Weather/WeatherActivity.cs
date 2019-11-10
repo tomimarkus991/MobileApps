@@ -19,21 +19,28 @@ namespace X.Scripts.ListViewFolder.Weather
             var searchButton = FindViewById<Button>(Resource.Id.searchButton);
             var weatherListView = FindViewById<ListView>(Resource.Id.list);
 
+            var _cityName1 = FindViewById<TextView>(Resource.Id.cityName);
             ShakeButtonClick();
 
             searchButton.Click += async delegate
             {
                 string cityName = searchField.Text; // võtab searchtexti selleks milleks kasutaja sisestas
+                _cityName1.Text = searchField.Text;
                 string cityNameString = "https://www.metaweather.com/api/location/search/?query=" + cityName;
-
-                var woeid2 = await DataService.GetDataFromLocation(cityNameString);
-
-                string searchWoeid = woeid2[0].Woeid.ToString();
-
-                string queryString = "https://www.metaweather.com/api/location/" + searchWoeid;
-                var data = await DataService.GetDataFromService(queryString);
-                weatherListView.Adapter = new WeatherAdapter(this, data.Consolidated_weather);
-            };
+                try
+                {
+                    var woeid2 = await DataService.GetDataFromLocation(cityNameString);
+                    string searchWoeid = woeid2[0].Woeid.ToString();
+                    string queryString = "https://www.metaweather.com/api/location/" + searchWoeid;
+                    var data = await DataService.GetDataFromService(queryString);
+                    weatherListView.Adapter = new WeatherAdapter(this, data.Consolidated_weather);
+                }
+                catch (IndexOutOfRangeException)
+                {
+                    _cityName1.Text = "Can't find that city";
+                    _cityName1.SetTextColor(Android.Graphics.Color.Red);
+                }         
+            };        
         }
         public void ShakeButtonClick()
         {

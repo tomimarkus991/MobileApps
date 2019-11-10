@@ -9,6 +9,13 @@
     android:layout_height="wrap_content"
     android:textColor="@color/white"
     android:layout_weight="1"
+    android:id="@+id/dateView" />
+    <TextView
+    android:text="Text"
+    android:layout_width="50dp"
+    android:layout_height="wrap_content"
+    android:textColor="@color/white"
+    android:layout_weight="1"
     android:id="@+id/textView1" />
     <TextView
     android:text="Text"
