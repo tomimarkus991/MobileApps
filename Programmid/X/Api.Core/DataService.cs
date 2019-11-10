@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Api.Core
+namespace WeatherApi.Core
 {
     public class DataService
     {

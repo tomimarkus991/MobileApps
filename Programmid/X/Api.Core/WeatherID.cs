@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Api.Core
+namespace WeatherApi.Core
 {
     public class ConsolidatedWeather
     {

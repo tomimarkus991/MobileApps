@@ -1,9 +1,8 @@
-﻿using System;
-using Android.App;
+﻿using Android.App;
 using Android.OS;
-using Android.Runtime;
 using Android.Widget;
-using Api.Core;
+using System;
+using WeatherApi.Core;
 using Xamarin.Essentials;
 
 namespace X.Scripts.ListViewFolder.Weather

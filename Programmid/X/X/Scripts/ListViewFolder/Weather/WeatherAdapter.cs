@@ -1,13 +1,13 @@
 ﻿using Android.App;
 using Android.Views;
 using Android.Widget;
-using Api.Core;
+using WeatherApi.Core;
 using System;
 using System.Collections.Generic;
 
 namespace X.Scripts
 {
-    class WeatherAdapter : BaseAdapter<Api.Core.ConsolidatedWeather>
+    class WeatherAdapter : BaseAdapter<ConsolidatedWeather>
     {
         List<ConsolidatedWeather> _items;
         Activity _context;

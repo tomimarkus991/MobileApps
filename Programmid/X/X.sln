@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X", "X\X.csproj", "{5316A916-0E63-4FD8-BF9F-848B3C8C919C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Core", "Api.Core\Api.Core.csproj", "{AE049E8B-B34F-4490-A3D2-39531E7B847D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherApi.Core", "Api.Core\WeatherApi.Core.csproj", "{AE049E8B-B34F-4490-A3D2-39531E7B847D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

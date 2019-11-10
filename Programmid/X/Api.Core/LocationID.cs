@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Api.Core
+namespace WeatherApi.Core
 {
     public class LocationId
     {
