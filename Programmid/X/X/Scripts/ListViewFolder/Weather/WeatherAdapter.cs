@@ -39,8 +39,8 @@ namespace X.Scripts
             }
             view.FindViewById<TextView>(Resource.Id.dateView).Text = item.Applicable_date;
             view.FindViewById<TextView>(Resource.Id.textView1).Text = item.Weather_state_name;
-            view.FindViewById<TextView>(Resource.Id.textView2).Text = Math.Round(item.The_temp, 2).ToString() + " (℃)";
-            view.FindViewById<TextView>(Resource.Id.textView3).Text = Math.Round(item.Wind_speed, 2).ToString() + " (m/s)";            
+            //view.FindViewById<TextView>(Resource.Id.tempView).Text = Math.Round(item.The_temp, 2).ToString() + " (℃)";
+            //view.FindViewById<TextView>(Resource.Id.windSpeedView).Text = Math.Round(item.Wind_speed, 2).ToString() + " (m/s)";            
             return view;
         }
     }

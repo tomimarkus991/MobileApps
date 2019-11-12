@@ -10,25 +10,25 @@
     android:textColor="@color/white"
     android:layout_weight="1"
     android:id="@+id/dateView" />
+    <ImageView
+        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_width="50px"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/weatherStateView" />
+    
     <TextView
     android:text="Text"
     android:layout_width="50dp"
     android:layout_height="wrap_content"
     android:textColor="@color/white"
     android:layout_weight="1"
-    android:id="@+id/textView1" />
+    android:id="@+id/tempView" />
     <TextView
     android:text="Text"
     android:layout_width="50dp"
     android:layout_height="wrap_content"
     android:textColor="@color/white"
     android:layout_weight="1"
-    android:id="@+id/textView2" />
-    <TextView
-    android:text="Text"
-    android:layout_width="50dp"
-    android:layout_height="wrap_content"
-    android:textColor="@color/white"
-    android:layout_weight="1"
-    android:id="@+id/textView3" />
+    android:id="@+id/windSpeedView" />
 </LinearLayout>

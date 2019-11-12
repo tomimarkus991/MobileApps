@@ -25,7 +25,6 @@ namespace X.Scripts.ListViewFolder.Weather
             searchButton.Click += async delegate
             {
                 string cityName = searchField.Text; // võtab searchtexti selleks milleks kasutaja sisestas
-                _cityName1.Text = searchField.Text;
                 string cityNameString = "https://www.metaweather.com/api/location/search/?query=" + cityName;
                 try
                 {
@@ -34,6 +33,8 @@ namespace X.Scripts.ListViewFolder.Weather
                     string queryString = "https://www.metaweather.com/api/location/" + searchWoeid;
                     var data = await DataService.GetDataFromService(queryString);
                     weatherListView.Adapter = new WeatherAdapter(this, data.Consolidated_weather);
+                    _cityName1.Text = searchField.Text;
+                    _cityName1.SetTextColor(Android.Graphics.Color.White);
                 }
                 catch (IndexOutOfRangeException)
                 {
