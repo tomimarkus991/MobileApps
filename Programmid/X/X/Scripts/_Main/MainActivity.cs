@@ -8,7 +8,7 @@ using System;
 
 namespace X
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true, Icon = "@drawable/X_logo")]
+    [Activity(Label = "@string/app_name", Icon = "@drawable/X_logo")]
     public class MainActivity : AppCompatActivity
     {
         // Calculator

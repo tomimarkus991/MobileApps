@@ -75,6 +75,7 @@
     <Compile Include="Scripts\LinearChallenge\LinearChallenge4.cs" />
     <Compile Include="Scripts\ListViewFolder\Weather\WeatherActivity.cs" />
     <Compile Include="Scripts\ListViewFolder\Weather\WeatherAdapter.cs" />
+    <Compile Include="Scripts\_Main\SplashActivity.cs" />
     <Compile Include="Scripts\_Main\MainActivity.cs" />
     <Compile Include="Scripts\RelativeChallenge\RelativeChallenge1.cs" />
     <Compile Include="Scripts\RelativeChallenge\RelativeChallenge2.cs" />
@@ -234,6 +235,14 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\t.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\splashScreen.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\pickleRick.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

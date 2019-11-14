@@ -3244,25 +3244,28 @@ namespace X
 			public const int notify_panel_notification_icon_bg = 2131165305;
 			
 			// aapt resource value: 0x7F07007A
-			public const int s = 2131165306;
+			public const int pickleRick = 2131165306;
 			
 			// aapt resource value: 0x7F07007B
-			public const int sl = 2131165307;
+			public const int s = 2131165307;
 			
 			// aapt resource value: 0x7F07007C
-			public const int sn = 2131165308;
+			public const int sl = 2131165308;
 			
 			// aapt resource value: 0x7F07007D
-			public const int t = 2131165309;
+			public const int sn = 2131165309;
 			
 			// aapt resource value: 0x7F07007E
-			public const int tooltip_frame_dark = 2131165310;
+			public const int t = 2131165310;
 			
 			// aapt resource value: 0x7F07007F
-			public const int tooltip_frame_light = 2131165311;
+			public const int tooltip_frame_dark = 2131165311;
 			
 			// aapt resource value: 0x7F070080
-			public const int X_logo = 2131165312;
+			public const int tooltip_frame_light = 2131165312;
+			
+			// aapt resource value: 0x7F070081
+			public const int X_logo = 2131165313;
 			
 			static Drawable()
 			{
@@ -4289,16 +4292,19 @@ namespace X
 			public const int select_dialog_singlechoice_material = 2131427394;
 			
 			// aapt resource value: 0x7F0B0043
-			public const int support_simple_spinner_dropdown_item = 2131427395;
+			public const int splashScreen = 2131427395;
 			
 			// aapt resource value: 0x7F0B0044
-			public const int weather_main_layout = 2131427396;
+			public const int support_simple_spinner_dropdown_item = 2131427396;
 			
 			// aapt resource value: 0x7F0B0045
-			public const int weather_row = 2131427397;
+			public const int weather_main_layout = 2131427397;
 			
 			// aapt resource value: 0x7F0B0046
-			public const int web_view = 2131427398;
+			public const int weather_row = 2131427398;
+			
+			// aapt resource value: 0x7F0B0047
+			public const int web_view = 2131427399;
 			
 			static Layout()
 			{
@@ -5997,6 +6003,9 @@ namespace X
 			
 			// aapt resource value: 0x7F0E01EF
 			public const int Widget_Support_CoordinatorLayout = 2131624431;
+			
+			// aapt resource value: 0x7F0E01F0
+			public const int XTheme_Splash = 2131624432;
 			
 			static Style()
 			{
