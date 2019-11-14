@@ -2,6 +2,7 @@
 using Android.OS;
 using Android.Widget;
 using System;
+using System.Collections.Generic;
 using WeatherApi.Core;
 using Xamarin.Essentials;
 
@@ -24,10 +25,10 @@ namespace X.Scripts.ListViewFolder.Weather
 
             searchButton.Click += async delegate
             {
-                string cityName = searchField.Text; // võtab searchtexti selleks milleks kasutaja sisestas
-                string cityNameString = "https://www.metaweather.com/api/location/search/?query=" + cityName;
                 try
                 {
+                    string cityName = searchField.Text; // võtab searchtexti selleks milleks kasutaja sisestas
+                    string cityNameString = "https://www.metaweather.com/api/location/search/?query=" + cityName;
                     var woeid2 = await DataService.GetDataFromLocation(cityNameString);
                     string searchWoeid = woeid2[0].Woeid.ToString();
                     string queryString = "https://www.metaweather.com/api/location/" + searchWoeid;
@@ -40,6 +41,9 @@ namespace X.Scripts.ListViewFolder.Weather
                 {
                     _cityName1.Text = "Can't find that city";
                     _cityName1.SetTextColor(Android.Graphics.Color.Red);
+
+                    List<ConsolidatedWeather> empty = new List<ConsolidatedWeather>();
+                    weatherListView.Adapter = new WeatherAdapter(this, empty);
                 }         
             };        
         }
