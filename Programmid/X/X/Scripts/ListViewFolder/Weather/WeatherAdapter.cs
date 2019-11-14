@@ -37,10 +37,11 @@ namespace X.Scripts
             {
                 view = _context.LayoutInflater.Inflate(Resource.Layout.weather_row, null);
             }
+            //var seeIcon = item.Weather_state_abbr.
             view.FindViewById<TextView>(Resource.Id.dateView).Text = item.Applicable_date;
-            view.FindViewById<TextView>(Resource.Id.textView1).Text = item.Weather_state_name;
-            //view.FindViewById<TextView>(Resource.Id.tempView).Text = Math.Round(item.The_temp, 2).ToString() + " (℃)";
-            //view.FindViewById<TextView>(Resource.Id.windSpeedView).Text = Math.Round(item.Wind_speed, 2).ToString() + " (m/s)";            
+            //view.FindViewById<ImageView>(Resource.Id.weatherStateView).SetImageDrawable(item.Weather_state_abbr) = seeIcon;
+            view.FindViewById<TextView>(Resource.Id.tempView).Text = Math.Round(item.The_temp, 2).ToString() + " (℃)";
+            view.FindViewById<TextView>(Resource.Id.windSpeedView).Text = Math.Round(item.Wind_speed, 2).ToString() + " (m/s)";
             return view;
         }
     }

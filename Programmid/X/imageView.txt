@@ -1,0 +1,1 @@
+kui kirjas weather_state_abbr":"sn"(snow), siis see võtab pildi drawable kaustast mille nimi sn ja paneb selle imageView sisse
