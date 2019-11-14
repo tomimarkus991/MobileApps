@@ -78,7 +78,7 @@ namespace X
 
             _batteryAppButton.Click += BatteryAppButton_Click;
 
-            _webView.Click += WebView_Click;
+            //_webView.Click += WebView_Click;
 
             _carView.Click += CarView_Click;
 
@@ -129,11 +129,11 @@ namespace X
             var intent = new Intent(this, typeof(BatteryApp));
             this.StartActivity(intent);
         }
-        private void WebView_Click(object sender, EventArgs e)
-        {
-            //var intent = new Intent(this, typeof(Scripts.w));
-            //this.StartActivity(intent);
-        }
+        //private void WebView_Click(object sender, EventArgs e)
+        //{
+        //    var intent = new Intent(this, typeof(WebView));
+        //    this.StartActivity(intent);
+        //}
         private void CarView_Click(object sender, EventArgs e)
         {
             var intent = new Intent(this, typeof(Scripts.ListViewFolder.Car.CarAcitivity));

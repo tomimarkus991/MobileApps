@@ -82,7 +82,7 @@
     <Compile Include="Scripts\RelativeChallenge\RelativeChallenge3.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scripts\WebView\webView.cs" />
+    <Compile Include="Scripts\WebView\WebView.cs" />
     <Compile Include="Scripts\WebView\XWebViewClient.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -177,11 +177,6 @@
       <Project>{ae049e8b-b34f-4490-a3d2-39531e7b847d}</Project>
       <Name>WeatherApi.Core</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\api.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\weather_main_layout.xml">

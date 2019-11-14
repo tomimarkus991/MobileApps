@@ -1,14 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey">
   <EditText
+      android:hint="5"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:id="@+id/arv1" />
   <EditText
+      android:hint="5"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:id="@+id/arv2" />
@@ -50,6 +52,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:textSize="50px"
         android:id="@+id/vastus" />
   </LinearLayout>
 </LinearLayout>

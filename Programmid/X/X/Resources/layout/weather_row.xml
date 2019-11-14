@@ -6,19 +6,20 @@
     <TextView
     android:text="Text"
     android:layout_width="50dp"
+    android:textSize="50px"
     android:layout_height="wrap_content"
     android:textColor="@color/white"
     android:layout_weight="1"
     android:id="@+id/dateView" />
     <ImageView
-        android:layout_width="50px"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:id="@+id/weatherStateView" />
-    
+    android:layout_width="50px"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:id="@+id/weatherStateView" />
     <TextView
     android:text="Text"
     android:layout_width="50dp"
+    android:textSize="50px"
     android:layout_height="wrap_content"
     android:textColor="@color/white"
     android:layout_weight="1"
@@ -26,6 +27,7 @@
     <TextView
     android:text="Text"
     android:layout_width="50dp"
+    android:textSize="50px"
     android:layout_height="wrap_content"
     android:textColor="@color/white"
     android:layout_weight="1"
