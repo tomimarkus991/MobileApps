@@ -5,6 +5,9 @@ using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Widget;
 using System;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace X
 {
@@ -42,6 +45,9 @@ namespace X
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "Main" layout resource
             SetContentView(Resource.Layout.layout_main);
+
+            AppCenter.Start("f10495a0-7c43-4307-8ae3-3cd66c933a6c",
+                   typeof(Analytics), typeof(Crashes));
 
             // ühendame nupuga
             _calcButton = FindViewById<Button>(Resource.Id.calcButton);
