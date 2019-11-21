@@ -37,7 +37,6 @@ namespace X.Scripts
             {
                 view = _context.LayoutInflater.Inflate(Resource.Layout.weather_row, null);
             }
-            //var seeIcon = item.Weather_state_abbr.
             view.FindViewById<TextView>(Resource.Id.dateView).Text = item.Applicable_date;
             string imageName = item.Weather_state_abbr;
             var drawable = (int)typeof(Resource.Drawable).GetField(imageName).GetValue(null);

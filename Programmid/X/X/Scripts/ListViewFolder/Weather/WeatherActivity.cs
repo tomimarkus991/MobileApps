@@ -3,6 +3,7 @@ using Android.OS;
 using Android.Widget;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using WeatherApi.Core;
 using Xamarin.Essentials;
 
@@ -44,7 +45,12 @@ namespace X.Scripts.ListViewFolder.Weather
 
                     List<ConsolidatedWeather> empty = new List<ConsolidatedWeather>();
                     weatherListView.Adapter = new WeatherAdapter(this, empty);
-                }         
+                }
+                catch (HttpRequestException)
+                {
+                    _cityName1.Text = "Enter a city's name please";
+                    _cityName1.SetTextColor(Android.Graphics.Color.Red);
+                }
             };        
         }
         public void ShakeButtonClick()

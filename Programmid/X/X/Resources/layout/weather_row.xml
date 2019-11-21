@@ -12,8 +12,9 @@
     android:layout_weight="1"
     android:id="@+id/dateView" />
     <ImageView
-    android:layout_width="200px"
-    android:layout_height="200px"
+    android:src="@android:drawable/ic_menu_gallery"
+    android:layout_width="70px"
+    android:layout_height="wrap_content"
     android:layout_weight="1"
     android:id="@+id/weatherStateView" />
     <TextView
