@@ -11,25 +11,43 @@ namespace X
         TextView _batteryState;
         TextView _batteryChargeSource;
         TextView _batteryChargeLevel;
+
+        ImageView _batteryImage;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.batteryApp);
-            // Create your application here
+            //// Create your application here
+            //string imageName = item.Weather_state_abbr;
+            //var drawable = (int)typeof(Resource.Drawable).GetField(imageName).GetValue(null);
+            //view.FindViewById<ImageView>(Resource.Id.weatherStateView).SetImageResource(drawable);
 
             _batteryState = FindViewById<TextView>(Resource.Id.batteryState);
             _batteryChargeSource = FindViewById<TextView>(Resource.Id.batteryChargeSource);
             _batteryChargeLevel = FindViewById<TextView>(Resource.Id.batteryChargeLevel);
+            _batteryImage = FindViewById<ImageView>(Resource.Id.imageView1);
 
-            var state = Battery.State;           
+            var state = Battery.State;
+            
+            
+
             
             switch (state)
             {
                 case BatteryState.Charging:
                     _batteryState.Text = "Charging";
+                    int chargingBatteryInt = Resource.Drawable.batteryCharging;
+                    _batteryImage.SetImageResource(chargingBatteryInt);
                     break;
                 case BatteryState.Full:
                     _batteryState.Text = "Full";
+                    var level = e.ChargeLevel;
+                    if (level >= 90)
+                    {
+                        int fullBatteryInt = Resource.Drawable.battery100;
+                        //_batteryImage.SetImageDrawable(Resource.Drawable.battery100);
+                        _batteryImage.SetImageResource(fullBatteryInt);
+                    }
                     break;
                 case BatteryState.Unknown:
                     _batteryState.Text = "Unable to detect battery state";
@@ -63,13 +81,25 @@ namespace X
         }
         private void Battery_BatteryInfoChanged(object sender, BatteryInfoChangedEventArgs e)
         {
-            var state = e.State;
-            var source = e.PowerSource;
-            var level = e.ChargeLevel;
+            //var state = e.State;
+            //var source = e.PowerSource;
+            //var level = e.ChargeLevel;
 
-            _batteryState.Text = state.ToString();
-            _batteryChargeSource.Text = source.ToString();
-            _batteryChargeLevel.Text = level.ToString();
+            //_batteryState.Text = state.ToString();
+            //_batteryChargeSource.Text = source.ToString();
+            //_batteryChargeLevel.Text = level.ToString();
+
+
+
+            
+
+            //if (level >= 90)
+            //{
+            //    int fullBatteryInt = Resource.Drawable.battery100;
+            //    //_batteryImage.SetImageDrawable(Resource.Drawable.battery100);
+            //    _batteryImage.SetImageResource(fullBatteryInt);
+            //}
+
         }
     }
 }
