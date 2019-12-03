@@ -25,6 +25,7 @@ namespace X.Scripts.ListViewFolder.Weather
             var weatherListView = FindViewById<ListView>(Resource.Id.list);
 
             var _cityName1 = FindViewById<TextView>(Resource.Id.cityName);
+
             ShakeButtonClick();
 
             searchButton.Click += async delegate
@@ -40,6 +41,15 @@ namespace X.Scripts.ListViewFolder.Weather
                     weatherListView.Adapter = new WeatherAdapter(this, data.Consolidated_weather);
                     _cityName1.Text = searchField.Text;
                     _cityName1.SetTextColor(Android.Graphics.Color.White);
+
+                    weatherListView.ItemClick += (object sender, ItemClickEventArgs e) =>
+                    {
+                        var weatherDetails = data.Consolidated_weather[e.Position];
+
+                        var intent = new Intent(this, typeof(WeatherDetailsActivity));
+                        intent.PutExtra("weatherDetails", JsonConvert.SerializeObject(weatherDetails));
+                        StartActivity(intent);
+                    };
                 }
                 catch (IndexOutOfRangeException)
                 {
@@ -55,26 +65,6 @@ namespace X.Scripts.ListViewFolder.Weather
                     _cityName1.SetTextColor(Android.Graphics.Color.Red);
                 }
             };
-            weatherListView.ItemClick += (object sender, ItemClickEventArgs e) =>
-            {
-
-                SetContentView(Resource.Layout.weather_click);
-                ConsolidatedWeather weather = new ConsolidatedWeather();
-                var weatherDetails = weather;
-
-                //string cityName = searchField.Text;
-                //string cityNameString = "https://www.metaweather.com/api/location/search/?query=" + cityName;
-                //var woeid2 = await DataService.GetDataFromLocation(cityNameString);
-                //string searchWoeid = woeid2[0].Woeid.ToString();
-                //string queryString = "https://www.metaweather.com/api/location/" + searchWoeid;
-                //var data = await DataService.GetDataFromService(queryString);
-
-                //var weatherDetails = data.Consolidated_weather[e.Position];
-
-                var intent = new Intent(this, typeof(WeatherDetailsActivity));
-                intent.PutExtra("weatherDetails", JsonConvert.SerializeObject(weatherDetails));
-                StartActivity(intent);
-            };
         }
         public void ShakeButtonClick()
         {
@@ -85,6 +75,7 @@ namespace X.Scripts.ListViewFolder.Weather
         {
             var searchButton = FindViewById<Button>(Resource.Id.searchButton);
             searchButton.PerformClick();
+            Accelerometer.Stop();
         }
     }
 }
