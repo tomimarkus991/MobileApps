@@ -18,8 +18,7 @@ namespace X
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.batteryApp);
             //Create your application here
-            var level = Battery.ChargeLevel;
-            _batteryChargeLevel.Text = level.ToString();
+
             Battery.BatteryInfoChanged += Battery_BatteryInfoChanged;
 
             _batteryState = FindViewById<TextView>(Resource.Id.batteryState);
@@ -38,13 +37,41 @@ namespace X
                     break;
                 case BatteryState.Full:
                     _batteryState.Text = "Full";
-                    int fullBatteryInt = Resource.Drawable.battery100;
-                    _batteryImage.SetImageResource(fullBatteryInt);
-                    break;
+                    break;               
                 case BatteryState.Unknown:
                     _batteryState.Text = "Unable to detect battery state";
                     break;
             }
+
+            var chargeLevel = Battery.ChargeLevel;
+
+            //switch (chargeLevel)
+            //{
+            //    case chargeLevel > 0.9 && chargeLevel < 1.0:
+            //        break;
+            //}
+
+            if (chargeLevel > 0.9 && chargeLevel < 1.0)
+            {
+                int fullBatteryInt = Resource.Drawable.battery100;
+                _batteryImage.SetImageResource(fullBatteryInt);
+            }
+            else if (chargeLevel > 0.6 && chargeLevel < 0.9)
+            {
+                int fullBatteryInt = Resource.Drawable.battery75;
+                _batteryImage.SetImageResource(fullBatteryInt);
+            }
+            else if (chargeLevel > 0.25 && chargeLevel < 0.6)
+            {
+                int fullBatteryInt = Resource.Drawable.battery50;
+                _batteryImage.SetImageResource(fullBatteryInt);
+            }
+            else if (chargeLevel > 0.0 && chargeLevel < 0.25)
+            {
+                int fullBatteryInt = Resource.Drawable.battery25;
+                _batteryImage.SetImageResource(fullBatteryInt);
+            }
+
 
             var source = Battery.PowerSource;
 
