@@ -4316,13 +4316,16 @@ namespace X
 			public const int support_simple_spinner_dropdown_item = 2131427395;
 			
 			// aapt resource value: 0x7F0B0044
-			public const int weather_main_layout = 2131427396;
+			public const int weather_click = 2131427396;
 			
 			// aapt resource value: 0x7F0B0045
-			public const int weather_row = 2131427397;
+			public const int weather_main_layout = 2131427397;
 			
 			// aapt resource value: 0x7F0B0046
-			public const int web_view = 2131427398;
+			public const int weather_row = 2131427398;
+			
+			// aapt resource value: 0x7F0B0047
+			public const int web_view = 2131427399;
 			
 			static Layout()
 			{

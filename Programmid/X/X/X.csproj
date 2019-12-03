@@ -79,6 +79,7 @@
     <Compile Include="Scripts\LinearChallenge\LinearChallenge4.cs" />
     <Compile Include="Scripts\ListViewFolder\Weather\WeatherActivity.cs" />
     <Compile Include="Scripts\ListViewFolder\Weather\WeatherAdapter.cs" />
+    <Compile Include="Scripts\ListViewFolder\Weather\WeatherDetailsActivity.cs" />
     <Compile Include="Scripts\_Main\SplashActivity.cs" />
     <Compile Include="Scripts\_Main\MainActivity.cs" />
     <Compile Include="Scripts\RelativeChallenge\RelativeChallenge1.cs" />
@@ -252,7 +253,11 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\pickleRick.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\weather_click.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\c.png" />
   </ItemGroup>

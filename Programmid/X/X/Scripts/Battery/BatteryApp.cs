@@ -17,10 +17,10 @@ namespace X
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.batteryApp);
-            //// Create your application here
-            //string imageName = item.Weather_state_abbr;
-            //var drawable = (int)typeof(Resource.Drawable).GetField(imageName).GetValue(null);
-            //view.FindViewById<ImageView>(Resource.Id.weatherStateView).SetImageResource(drawable);
+            //Create your application here
+            var level = Battery.ChargeLevel;
+            _batteryChargeLevel.Text = level.ToString();
+            Battery.BatteryInfoChanged += Battery_BatteryInfoChanged;
 
             _batteryState = FindViewById<TextView>(Resource.Id.batteryState);
             _batteryChargeSource = FindViewById<TextView>(Resource.Id.batteryChargeSource);
@@ -28,9 +28,6 @@ namespace X
             _batteryImage = FindViewById<ImageView>(Resource.Id.imageView1);
 
             var state = Battery.State;
-            
-            
-
             
             switch (state)
             {
@@ -41,13 +38,8 @@ namespace X
                     break;
                 case BatteryState.Full:
                     _batteryState.Text = "Full";
-                    var level = e.ChargeLevel;
-                    if (level >= 90)
-                    {
-                        int fullBatteryInt = Resource.Drawable.battery100;
-                        //_batteryImage.SetImageDrawable(Resource.Drawable.battery100);
-                        _batteryImage.SetImageResource(fullBatteryInt);
-                    }
+                    int fullBatteryInt = Resource.Drawable.battery100;
+                    _batteryImage.SetImageResource(fullBatteryInt);
                     break;
                 case BatteryState.Unknown:
                     _batteryState.Text = "Unable to detect battery state";
@@ -74,10 +66,6 @@ namespace X
                     _batteryChargeSource.Text = "Unable to detect power source";
                     break;
             }
-
-            var level = Battery.ChargeLevel;
-            _batteryChargeLevel.Text = level.ToString();
-            Battery.BatteryInfoChanged += Battery_BatteryInfoChanged;
         }
         private void Battery_BatteryInfoChanged(object sender, BatteryInfoChangedEventArgs e)
         {

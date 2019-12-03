@@ -1,11 +1,14 @@
 ﻿using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Widget;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using WeatherApi.Core;
 using Xamarin.Essentials;
+using static Android.Widget.AdapterView;
 
 namespace X.Scripts.ListViewFolder.Weather
 {
@@ -51,7 +54,27 @@ namespace X.Scripts.ListViewFolder.Weather
                     _cityName1.Text = "Enter a city's name please";
                     _cityName1.SetTextColor(Android.Graphics.Color.Red);
                 }
-            };        
+            };
+            weatherListView.ItemClick += (object sender, ItemClickEventArgs e) =>
+            {
+
+                SetContentView(Resource.Layout.weather_click);
+                ConsolidatedWeather weather = new ConsolidatedWeather();
+                var weatherDetails = weather;
+
+                //string cityName = searchField.Text;
+                //string cityNameString = "https://www.metaweather.com/api/location/search/?query=" + cityName;
+                //var woeid2 = await DataService.GetDataFromLocation(cityNameString);
+                //string searchWoeid = woeid2[0].Woeid.ToString();
+                //string queryString = "https://www.metaweather.com/api/location/" + searchWoeid;
+                //var data = await DataService.GetDataFromService(queryString);
+
+                //var weatherDetails = data.Consolidated_weather[e.Position];
+
+                var intent = new Intent(this, typeof(WeatherDetailsActivity));
+                intent.PutExtra("weatherDetails", JsonConvert.SerializeObject(weatherDetails));
+                StartActivity(intent);
+            };
         }
         public void ShakeButtonClick()
         {
