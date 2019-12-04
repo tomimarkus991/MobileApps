@@ -1,14 +1,86 @@
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
     android:text="Text"
-    android:layout_width="50dp"
+    android:layout_width="match_parent"
     android:textSize="50px"
     android:layout_height="wrap_content"
     android:textColor="@color/white"
     android:layout_weight="1"
-    android:id="@+id/dateView" />
-</LinearLayout>
+    android:id="@+id/time" />
+    <TextView
+    android:text="Text"
+    android:layout_width="match_parent"
+    android:textSize="50px"
+    android:layout_height="wrap_content"
+    android:textColor="@color/white"
+    android:layout_weight="1"
+    android:layout_below="@id/time"
+    android:id="@+id/humidity" />
+    <TextView
+    android:text="Text"
+    android:layout_width="match_parent"
+    android:textSize="50px"
+    android:layout_height="wrap_content"
+    android:textColor="@color/white"
+    android:layout_weight="1"
+    android:layout_below="@id/humidity"
+    android:id="@+id/airPressure" />
+    <TextView
+    android:text="Text"
+    android:layout_width="match_parent"
+    android:textSize="50px"
+    android:layout_height="wrap_content"
+    android:textColor="@color/white"
+    android:layout_weight="1"
+    android:layout_below="@id/airPressure"
+    android:id="@+id/visibility" />
+    <TextView
+    android:text="Text"
+    android:layout_width="match_parent"
+    android:textSize="50px"
+    android:layout_height="wrap_content"
+    android:textColor="@color/white"
+    android:layout_weight="1"
+    android:layout_below="@id/visibility"
+    android:id="@+id/woeid" />
+    <TextView
+    android:text="Text"
+    android:layout_width="match_parent"
+    android:textSize="50px"
+    android:layout_height="wrap_content"
+    android:textColor="@color/white"
+    android:layout_weight="1"
+    android:layout_below="@id/woeid"
+    android:id="@+id/timezone" />
+    <TextView
+    android:text="Text"
+    android:layout_width="match_parent"
+    android:textSize="50px"
+    android:layout_height="wrap_content"
+    android:textColor="@color/white"
+    android:layout_weight="1"
+    android:layout_below="@id/timezone"
+    android:id="@+id/sunRise" />
+    <TextView
+    android:text="Text"
+    android:layout_width="match_parent"
+    android:textSize="50px"
+    android:layout_height="wrap_content"
+    android:textColor="@color/white"
+    android:layout_weight="1"
+    android:layout_below="@id/sunRise"
+    android:id="@+id/sunSet" />
+    <TextView
+    android:text="Text"
+    android:layout_width="match_parent"
+    android:textSize="50px"
+    android:layout_height="wrap_content"
+    android:textColor="@color/white"
+    android:layout_weight="1"
+    android:layout_below="@id/sunSet"
+    android:id="@+id/windDirection" />
+</RelativeLayout>

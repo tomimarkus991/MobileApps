@@ -20,7 +20,7 @@ namespace WeatherApi.Core
         public int Humidity { get; set; }
         public double Visibility { get; set; }
         public int Predictability { get; set; }
-        public List<MainWeather> Results { get; set; }
+        public List<MainWeather> MainWeatherResults { get; set; }
         public List<ConsolidatedWeather> Consolidated_weather { get; set; }
     }
 

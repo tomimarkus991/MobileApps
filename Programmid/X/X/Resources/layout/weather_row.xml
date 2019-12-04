@@ -16,6 +16,7 @@
     android:layout_width="70px"
     android:layout_height="wrap_content"
     android:layout_weight="1"
+    android:layout_gravity="center_vertical"
     android:id="@+id/weatherStateView" />
     <TextView
     android:text="Text"
@@ -24,6 +25,7 @@
     android:layout_height="wrap_content"
     android:textColor="@color/white"
     android:layout_weight="1"
+    android:layout_gravity="center_vertical"
     android:id="@+id/tempView" />
     <TextView
     android:text="Text"
@@ -32,5 +34,6 @@
     android:layout_height="wrap_content"
     android:textColor="@color/white"
     android:layout_weight="1"
+    android:layout_gravity="center_vertical"
     android:id="@+id/windSpeedView" />
 </LinearLayout>

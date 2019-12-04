@@ -8,7 +8,8 @@ namespace WeatherApi.Core
     {
         public static async Task<MainWeather> GetDataFromService(string queryString)
         {
-            HttpClient client = new HttpClient();
+            HttpClient httpClient = new HttpClient();
+            HttpClient client = httpClient;
             var response = await client.GetStringAsync(queryString);
 
             MainWeather data = null;
@@ -21,7 +22,8 @@ namespace WeatherApi.Core
 
         public static async Task<LocationId[]> GetDataFromLocation(string queryString)
         {
-            HttpClient client = new HttpClient();
+            HttpClient httpClient = new HttpClient();
+            HttpClient client = httpClient;
             var response = await client.GetStringAsync(queryString);
 
             LocationId[] data = null;

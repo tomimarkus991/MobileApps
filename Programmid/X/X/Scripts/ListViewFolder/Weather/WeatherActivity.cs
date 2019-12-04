@@ -45,9 +45,11 @@ namespace X.Scripts.ListViewFolder.Weather
                     weatherListView.ItemClick += (object sender, ItemClickEventArgs e) =>
                     {
                         var weatherDetails = data.Consolidated_weather[e.Position];
+                        var weatherDetails2 = data;
 
                         var intent = new Intent(this, typeof(WeatherDetailsActivity));
                         intent.PutExtra("weatherDetails", JsonConvert.SerializeObject(weatherDetails));
+                        intent.PutExtra("weatherDetails2", JsonConvert.SerializeObject(weatherDetails2));
                         StartActivity(intent);
                     };
                 }
@@ -63,6 +65,10 @@ namespace X.Scripts.ListViewFolder.Weather
                 {
                     _cityName1.Text = "Enter a city's name please";
                     _cityName1.SetTextColor(Android.Graphics.Color.Red);
+                }
+                catch (InvalidOperationException)
+                {
+                    _cityName1.Text = "Katki";
                 }
             };
         }

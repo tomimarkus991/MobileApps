@@ -22,13 +22,19 @@ namespace X.Scripts.ListViewFolder.Weather
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.weather_click);
-            // Create your application here
-            var weatherDate = FindViewById<TextView>(Resource.Id.dateView);
-
 
             var weatherDetails = JsonConvert.DeserializeObject<ConsolidatedWeather>(Intent.GetStringExtra("weatherDetails"));
-            //FindViewById<TextView>(Resource.Id.dateView).Text = weatherDetails.Applicable_date;
-            weatherDate.Text = weatherDetails.Applicable_date;
+            var weatherDetails2 = JsonConvert.DeserializeObject<MainWeather>(Intent.GetStringExtra("weatherDetails2"));
+
+            FindViewById<TextView>(Resource.Id.humidity).Text = "Humidity " + weatherDetails.Humidity.ToString();
+            FindViewById<TextView>(Resource.Id.airPressure).Text = "Air pressure " + weatherDetails.Air_pressure.ToString();
+            FindViewById<TextView>(Resource.Id.visibility).Text = "Visibility " + Math.Round(weatherDetails.Visibility, 2).ToString();
+            FindViewById<TextView>(Resource.Id.woeid).Text = "City's woeid " + weatherDetails2.Woeid.ToString();
+            FindViewById<TextView>(Resource.Id.timezone).Text = weatherDetails2.Timezone;
+            FindViewById<TextView>(Resource.Id.time).Text = Convert.ToDateTime(weatherDetails2.Time).ToString("dd/MMM H:mm");
+            FindViewById<TextView>(Resource.Id.sunRise).Text = "Sun rise " + Convert.ToDateTime(weatherDetails2.Sun_rise).ToString("dd/MMM H:mm");
+            FindViewById<TextView>(Resource.Id.sunSet).Text = "Sun set " + Convert.ToDateTime(weatherDetails2.Sun_set).ToString("dd/MMM H:mm");
+            FindViewById<TextView>(Resource.Id.windDirection).Text = "Wind direction " + weatherDetails.Wind_direction_compass;
         }
     }
 }
