@@ -36,9 +36,11 @@ namespace X.Scripts.ListViewFolder.Weather
                     string cityNameString = "https://www.metaweather.com/api/location/search/?query=" + cityName;
                     var woeid2 = await DataService.GetDataFromLocation(cityNameString);
                     string searchWoeid = woeid2[0].Woeid.ToString();
+
                     string queryString = "https://www.metaweather.com/api/location/" + searchWoeid;
                     var data = await DataService.GetDataFromService(queryString);
                     weatherListView.Adapter = new WeatherAdapter(this, data.Consolidated_weather);
+
                     _cityName1.Text = searchField.Text;
                     _cityName1.SetTextColor(Android.Graphics.Color.White);
 
