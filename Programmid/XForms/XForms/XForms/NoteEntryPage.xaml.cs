@@ -22,15 +22,9 @@ namespace XForms
         {
             var note = (Note)BindingContext;
 
-            if (string.IsNullOrWhiteSpace(note.Filename))
-            {
-                var filename = Path.Combine(App.FolderPath, $"{Path.GetRandomFileName()}.notes.txt");
-                File.WriteAllText(filename, note.Text);
-            }
-            else
-            {
-                File.WriteAllText(note.Filename, note.Text);
-            }
+            note.Text = editor.Text;
+            note.Date = DateTime.UtcNow;
+            await App.Database.SaveNoteAsync(note);
 
             await Navigation.PopAsync();
         }
@@ -38,10 +32,8 @@ namespace XForms
         {
             var note = (Note)BindingContext;
 
-            if (File.Exists(note.Filename))
-            {
-                File.Delete(note.Filename);
-            }
+            await App.Database.DeleteNoteAsync(note);
+
             await Navigation.PopAsync();
         }
     }
