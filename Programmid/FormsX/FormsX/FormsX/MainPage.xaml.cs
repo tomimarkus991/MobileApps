@@ -17,5 +17,10 @@ namespace FormsX
         {
             InitializeComponent();
         }
+        
+        private async void OnCheckBoxCheckedChanged(object sender, EventArgs e)
+        {
+            await label.RelRotateTo(360, 1000);
+        }
     }
 }
