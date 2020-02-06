@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FormsX.Tables;
+using SQLite;
+using System;
+using System.IO;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -20,6 +19,33 @@ namespace FormsX.Views
         private async void SignUp_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new SignUp());
+        }
+        private async void Login_Clicked(object sender, EventArgs e)
+        {
+            var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
+            var db = new SQLiteConnection(dbPath);
+            var myQuery = db.Table<SignUpUserTable>().Where(u => u.UserName.Equals(EntryUser.Text) && u.Password.Equals(EntryPassword.Text)).FirstOrDefault();
+
+            if (myQuery != null)
+            {
+                App.Current.MainPage = new NavigationPage(new HomePage());
+            }
+            else
+            {
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    var result = await this.DisplayAlert("Error", "Username or Password is wrong", "Yes", "Cancel");
+                    if (result)
+                    {
+                        await Navigation.PushAsync(new LoginPage());
+                    }
+                    else
+                    {
+                        await Navigation.PushAsync(new LoginPage());
+                    }
+                });
+            }
+            //await Navigation.PushAsync(new HomeScreen());
         }
     }
 }

@@ -35,6 +35,10 @@ namespace FormsX.Views
             Device.BeginInvokeOnMainThread(async () =>
             {
                 var result = await this.DisplayAlert("Congratulations", "User Registration Successful", "Yes", "Cancel");
+                if (result)
+                {
+                    await Navigation.PushAsync(new LoginPage());
+                }
             });
         }
     }
