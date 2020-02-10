@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:vm="clr-namespace:FormsX.ViewModels;assembly=FormsX"
+             xmlns:forms="http://xamarin.com/schemas/2014/forms"
              x:Class="FormsX.MainPage">
     <ContentPage.BindingContext>
         <vm:MainViewModel/>

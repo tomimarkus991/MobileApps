@@ -29,18 +29,8 @@ namespace FormsX.ViewModels
                 {
                     _tip = value;
                     OnPropertyChanged(nameof(Tip));
-                    Recalculate();
+                    Recalculate(); // vb võtan ära
                 }
-            }
-        }
-        private string _username;
-        public string Username
-        {
-            get { return _username; }
-            set
-            {
-                _username = value;
-                OnPropertyChanged(nameof(Username));
             }
         }
         private double _subtotal;
@@ -57,6 +47,16 @@ namespace FormsX.ViewModels
                 }
             }
         }
+        private string _username;
+        public string Username
+        {
+            get { return _username; }
+            set
+            {
+                _username = value;
+                OnPropertyChanged(nameof(Username));
+            }
+        }
         private double _generosity;
         public double Generosity
         {
@@ -71,9 +71,24 @@ namespace FormsX.ViewModels
                 }
             }
         }
+        private double _total;
+        public double Total
+        {
+            get { return _total; }
+            set
+            {
+                if (_total != value)
+                {
+                    _total = value;
+                    OnPropertyChanged(nameof(Total));
+                    Recalculate();
+                }
+            }
+        }
         public void Recalculate()
         {
             Tip = Subtotal * Generosity / 100;
+            Total = Subtotal + Tip;
         }
     }
 }

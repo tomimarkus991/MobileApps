@@ -20,7 +20,7 @@ namespace FormsX.Views
         {
             await Navigation.PushAsync(new SignUp());
         }
-        private async void Login_Clicked(object sender, EventArgs e)
+        private void Login_Clicked(object sender, EventArgs e)
         {
             var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
             var db = new SQLiteConnection(dbPath);
@@ -34,7 +34,7 @@ namespace FormsX.Views
             {
                 Device.BeginInvokeOnMainThread(async () =>
                 {
-                    var result = await this.DisplayAlert("Error", "Username or Password is wrong", "Yes", "Cancel");
+                    var result = await this.DisplayAlert("Error", "Username or Password wrong", "Yes", "Cancel");
                     if (result)
                     {
                         await Navigation.PushAsync(new LoginPage());

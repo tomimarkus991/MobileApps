@@ -15,6 +15,17 @@ namespace FormsX.Views
         public HomePage()
         {
             InitializeComponent();
+
+            var names = new List<string>
+            {
+                "sadas", "kalle","peeter","aadam"
+            };
+            MainCarouselView.ItemsSource = names;
+            //var pictures = new List<string>
+            //{
+
+            //};
+            //MainCarouselView.ItemsSource = pictures;
         }
         private async void Logout_Clicked(object sender, EventArgs e)
         {

@@ -5,14 +5,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:vm="clr-namespace:FormsX.ViewModels;assembly=FormsX"
+             xmlns:local="clr-namespace:FormsX.Converters"
+             xmlns:forms="http://xamarin.com/schemas/2014/forms"
              x:Class="FormsX.Views.HomePage">
     <ContentPage.BindingContext>
         <vm:MainViewModel/>
     </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <local:DoubleRoundingConverter x:Key="stringConverter"/>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Grid VerticalOptions="CenterAndExpand" Margin="20">
+                <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="20">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
@@ -22,12 +27,21 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Entry Text="{Binding Subtotal}" Grid.Row="0"/>
-                    <Slider Value="{Binding Generosity}" Grid.Row="1"></Slider>
+                    <Slider Value="{Binding Generosity, Converter={StaticResource stringConverter}}" Grid.Row="1"></Slider>
                     <Label Text="{Binding Tip}" x:Name="label" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Grid.Row="2"/>
                     <CheckBox Color="Blue"  Grid.Row="3" CheckedChanged="OnCheckBoxCheckedChanged"></CheckBox>
                     <Label Text="{Binding Total}" Grid.Row="4" HorizontalOptions="Center"></Label>
                     <Button Text="Logout" TextColor="#0077be" Grid.Row="5" Clicked="Logout_Clicked"></Button>
                 </Grid>
+                <forms:CarouselView x:Name="MainCarouselView" Margin="40">
+                    <forms:CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                <Label Text="{Binding .}" HorizontalTextAlignment="Center" FontSize="60" />
+                            </StackLayout>
+                        </DataTemplate>
+                    </forms:CarouselView.ItemTemplate>
+                </forms:CarouselView>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

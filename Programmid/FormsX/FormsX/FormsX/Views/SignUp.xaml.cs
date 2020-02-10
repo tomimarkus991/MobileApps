@@ -32,14 +32,29 @@ namespace FormsX.Views
                 Email = EntryUserEmail.Text
             };
             db.Insert(item);
-            Device.BeginInvokeOnMainThread(async () =>
+            if (item.UserName == null)
             {
-                var result = await this.DisplayAlert("Congratulations", "User Registration Successful", "Yes", "Cancel");
-                if (result)
+                DisplayAlert("Alert", "please enter Username", "ok");
+            }
+            else if (item.Password == null)
+            {
+                DisplayAlert("Alert", "please enter Password", "ok");
+            }
+            else if (item.Email == null)
+            {
+                DisplayAlert("Alert", "please enter Email", "ok");
+            }
+            if (item.UserName != null && item.Password != null && item.Email != null)
+            {
+                Device.BeginInvokeOnMainThread(async () =>
                 {
-                    await Navigation.PushAsync(new LoginPage());
-                }
-            });
+                    var result = await this.DisplayAlert("Registration Complete", "User Registration Successful", "Yes", "Cancel");
+                    if (result)
+                    {
+                        await Navigation.PushAsync(new LoginPage());
+                    }
+                });
+            }
         }
     }
 }
