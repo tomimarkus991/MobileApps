@@ -25,7 +25,7 @@
                     <Entry Text="{Binding Subtotal}" Grid.Row="0"/>
                     <Slider Value="{Binding Generosity}" Grid.Row="1"></Slider>
                     <Label Text="{Binding Tip}" x:Name="label" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Grid.Row="2"/>
-                    <CheckBox Color="Blue"  Grid.Row="3" CheckedChanged="OnCheckBoxCheckedChanged"></CheckBox>
+                    <CheckBox Color="White" Grid.Row="3" CheckedChanged="OnCheckBoxCheckedChanged"></CheckBox>
                     <Label Text="{Binding Total}" Grid.Row="4" HorizontalOptions="Center"></Label>
                 </Grid>
             </StackLayout>

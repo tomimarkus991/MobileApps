@@ -20,12 +20,12 @@ namespace FormsX.Converters
 
         double Round(double number, object parameter)
         {
-            double percision = 0.1;
+            double percision = 0.01;
             if (parameter != null)
             {
                 percision = double.Parse((string)parameter);
             }
-            return percision * Math.Round(number / percision);
+            return percision * Math.Round(number / percision, 2);
         }
     }
 }

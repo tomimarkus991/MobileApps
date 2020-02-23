@@ -11,6 +11,7 @@ namespace FormsX
         {
             InitializeComponent();
 
+            //MainPage = new NavigationPage(new TabbedPage1());
             MainPage = new NavigationPage(new LoginPage());
             //MainPage = new MainPage();
         }

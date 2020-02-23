@@ -28,7 +28,7 @@ namespace FormsX.Views
 
             if (myQuery != null)
             {
-                App.Current.MainPage = new NavigationPage(new HomePage());
+                App.Current.MainPage = new NavigationPage(new TabbedPage1());
             }
             else
             {

@@ -15,7 +15,7 @@ namespace FormsX.ViewModels
         public MainViewModel()
         {
             _subtotal = 100;
-            _generosity = 10;
+            _generosity = 0.1;
 
             Recalculate();
         }
@@ -87,7 +87,7 @@ namespace FormsX.ViewModels
         }
         public void Recalculate()
         {
-            Tip = Subtotal * Generosity / 100;
+            Tip = Subtotal * Generosity;
             Total = Subtotal + Tip;
         }
     }

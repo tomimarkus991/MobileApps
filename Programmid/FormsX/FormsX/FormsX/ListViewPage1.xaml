@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FormsX.ListViewPage1">
+    <ListView x:Name="MyListView"
+            ItemsSource="{Binding Items}"
+            ItemTapped="Handle_ItemTapped"
+            CachingStrategy="RecycleElement"
+            BackgroundColor="#34495e">
+        <d:ListView.ItemsSource>
+            <x:Array Type="{x:Type x:String}">
+                <x:String>Eesti</x:String>
+                <x:String>Inglise</x:String>
+                <x:String>Saksa</x:String>
+                <x:String>Prantsuse</x:String>
+                <x:String>Jaapani</x:String>
+            </x:Array>
+        </d:ListView.ItemsSource>
+        <!--Built in Cells-->
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding .}" d:Text="{Binding .}" TextColor="White"/>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+    </ListView>
+</ContentPage>

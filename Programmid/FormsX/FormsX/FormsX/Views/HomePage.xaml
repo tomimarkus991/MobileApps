@@ -11,9 +11,9 @@
     <ContentPage.BindingContext>
         <vm:MainViewModel/>
     </ContentPage.BindingContext>
-    <ContentPage.Resources>
-        <local:DoubleRoundingConverter x:Key="stringConverter"/>
-    </ContentPage.Resources>
+        <ContentPage.Resources>
+            <local:DoubleRoundingConverter x:Key="stringConverter"/>
+        </ContentPage.Resources>
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
@@ -26,22 +26,22 @@
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Entry Text="{Binding Subtotal}" Grid.Row="0"/>
-                    <Slider Value="{Binding Generosity, Converter={StaticResource stringConverter}}" Grid.Row="1"></Slider>
-                    <Label Text="{Binding Tip}" x:Name="label" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Grid.Row="2"/>
-                    <CheckBox Color="Blue"  Grid.Row="3" CheckedChanged="OnCheckBoxCheckedChanged"></CheckBox>
-                    <Label Text="{Binding Total}" Grid.Row="4" HorizontalOptions="Center"></Label>
+                    <Entry Text="{Binding Subtotal}" Grid.Row="1" TextColor="White"/>
+                    <Slider Value="{Binding Generosity, Converter={StaticResource stringConverter}}" Grid.Row="2" ThumbColor="White"></Slider>
+                    <Label Text="{Binding Tip}" x:Name="label" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Grid.Row="3" TextColor="White"/>
+                    <CheckBox Color="White" Grid.Row="3" CheckedChanged="OnCheckBoxCheckedChanged"></CheckBox>
+                    <Label Text="{Binding Total}" Grid.Row="4" HorizontalOptions="Center" TextColor="White"></Label>
                     <Button Text="Logout" TextColor="#0077be" Grid.Row="5" Clicked="Logout_Clicked"></Button>
                 </Grid>
-                <forms:CarouselView x:Name="MainCarouselView" Margin="40">
-                    <forms:CarouselView.ItemTemplate>
+                <CarouselView x:Name="MainCarouselView" Margin="40" BackgroundColor="AliceBlue" Grid.Row="3">
+                    <CarouselView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
                                 <Label Text="{Binding .}" HorizontalTextAlignment="Center" FontSize="60" />
                             </StackLayout>
                         </DataTemplate>
-                    </forms:CarouselView.ItemTemplate>
-                </forms:CarouselView>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
