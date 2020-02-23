@@ -20,8 +20,8 @@ namespace FormsX.ViewModels
             Languages = new ObservableCollection<Language>
             {
                 new Language() { LanguageLong = "Eesti", LanguageShort = "Est" },
-                new Language() { LanguageLong = "Eesti", LanguageShort = "Est" },
-                new Language() { LanguageLong = "Eesti", LanguageShort = "Est" }
+                new Language() { LanguageLong = "English", LanguageShort = "Eng" },
+                new Language() { LanguageLong = "Deutsch", LanguageShort = "De" }
             };
         }
         public class Language

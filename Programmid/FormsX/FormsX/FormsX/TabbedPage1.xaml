@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:FormsX;assembly=FormsX"
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              xmlns:local1="clr-namespace:FormsX.Views"
-             android:TabbedPage.ToolbarPlacement="Bottom"
+            xmlns:local2="clr-namespace:FormsX.Settings"
+            android:TabbedPage.ToolbarPlacement="Bottom"
              BarBackgroundColor="#0077be"
              BarTextColor="White"
              android:TabbedPage.BarItemColor="#0077be"
@@ -15,7 +16,7 @@
              x:Class="FormsX.TabbedPage1">
   <!--Pages can be added as references or inline-->
     <local1:HomePage Title="TipCalc" BackgroundColor="#34495e"/>
-    <local:Settings Title="Settings" BackgroundColor="#34495e"/>
-    <ContentPage Title="Tab 2" />
+    <local2:Settings Title="Settings" BackgroundColor="#34495e"/>
+    <ContentPage Title="Instagram" />
   <ContentPage Title="Tab 3" />
 </TabbedPage>

@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="FormsX.Settings">
+             x:Class="FormsX.Settings.Settings">
     <ContentPage.Content>
         <StackLayout>
             <Button Text="Languages" BackgroundColor="#0077be" TextColor="White" Clicked="Languages_Clicked"></Button>

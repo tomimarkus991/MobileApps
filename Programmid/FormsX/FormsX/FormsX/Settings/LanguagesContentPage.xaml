@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:FormsX.ViewModels"
              mc:Ignorable="d"
-             x:Class="FormsX.LanguagesContentPage">
+             x:Class="FormsX.Settings.LanguagesContentPage">
     <ContentPage.BindingContext>
         <vm:LanguageViewModel/>
     </ContentPage.BindingContext>

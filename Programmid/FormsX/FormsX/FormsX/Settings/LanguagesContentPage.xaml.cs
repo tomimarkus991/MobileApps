@@ -7,18 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace FormsX
+namespace FormsX.Settings
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Settings : ContentPage
+    public partial class LanguagesContentPage : ContentPage
     {
-        public Settings()
+        public LanguagesContentPage()
         {
             InitializeComponent();
-        }
-        private async void Languages_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new LanguagesContentPage());
         }
     }
 }
