@@ -10,11 +10,23 @@
         <vm:PicturesIGViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding Pictures}">
+        <ListView ItemsSource="{Binding Pictures}" RowHeight="350">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ImageCell Text="{Binding Title}" Detail="{Binding Date}" TextColor="White" ImageSource="{Binding PictureUrl}">
-                    </ImageCell>
+                    <ViewCell>
+                        <StackLayout BackgroundColor="#2c3e50" HeightRequest="350" Orientation="Vertical">
+                            <Grid VerticalOptions="CenterAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                            </Grid>
+                            <Label Text="{Binding Title}" TextColor="White" Grid.Row="0"></Label>
+                            <Label Text="{Binding Date}" TextColor="White" Grid.Row="1"></Label>
+                            <Image Source="{Binding PictureUrl}" HeightRequest="300" Grid.Row="2"/>
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
