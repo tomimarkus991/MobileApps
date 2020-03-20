@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Copygram.Pages.PostDetailsPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#2c3e50" HeightRequest="500" Orientation="Vertical">
+            <Grid VerticalOptions="Start">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+            </Grid>
+            <Label Text="{Binding Title}" TextColor="White" Grid.Row="0"></Label>
+            <Label Text="{Binding Date}" TextColor="White" Grid.Row="1"></Label>
+            <Image Source="{Binding PictureUrl}" HeightRequest="300" Grid.Row="2"/>
+            <Button x:Name="DeletePostBtn" Text="Delete This Post" Clicked="DeletePostBtn_Clicked" Grid.Row="3"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local1="clr-namespace:Copygram.Pages"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:local2="clr-namespace:Copygram"
+             mc:Ignorable="d"
+             android:TabbedPage.ToolbarPlacement="Bottom"
+             android:TabbedPage.BarItemColor="#2c3e50"
+             android:TabbedPage.BarSelectedItemColor="White"
+             BarBackgroundColor="#2c3e50"
+             BarTextColor="White"
+             x:Class="Copygram.Tabs.TabbedPage1">
+  <!--Pages can be added as references or inline-->
+    <local1:PostsPage Title="Posts" BackgroundColor="#2c3e50"/>
+    <local2:AddPostPage Title="Add Post" BackgroundColor="#2c3e50"/>
+</TabbedPage>
