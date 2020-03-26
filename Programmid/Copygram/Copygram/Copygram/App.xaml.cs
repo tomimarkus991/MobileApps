@@ -1,6 +1,5 @@
 ﻿using Copygram.Data;
-using Copygram.Pages;
-using Copygram.Tabs;
+using Copygram.Pages.Authentication;
 using System;
 using System.IO;
 using Xamarin.Forms;
@@ -27,10 +26,7 @@ namespace Copygram
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
-            //MainPage = new NavigationPage(TabbedPage1());
-            //MainPage = new TabbedPage1();
-            //MainPage = new NavigationPage(Copygram.Tabs.TabbedPage1);
+            MainPage = new NavigationPage(new LoginPage());
         }
 
         protected override void OnStart()
