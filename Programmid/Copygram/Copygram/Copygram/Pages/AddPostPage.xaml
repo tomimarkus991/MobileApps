@@ -16,9 +16,9 @@
                 </Grid.RowDefinitions>
             </Grid>
             <Entry x:Name="PostTitle" Placeholder="Enter Title" PlaceholderColor="White" FontSize="25" TextColor="White" Grid.Row="0"></Entry>
-            <Button x:Name="TakePictureBtn" Text="Take Picture" Clicked="TakePictureBtn_Clicked" Grid.Row="1"></Button>
+            <Button x:Name="TakePictureBtn" Text="Take Picture" Clicked="TakePicture_Clicked" Grid.Row="1"></Button>
             <Image x:Name="Image" WidthRequest="500" HeightRequest="400" Grid.Row="2"/>
-            <Button VerticalOptions="EndAndExpand" Text="Save Post" x:Name="SavePostBtn" Clicked="SavePostBtn_Clicked" Grid.Row="3"></Button>
+            <Button VerticalOptions="EndAndExpand" Text="Save Post" x:Name="SavePostBtn" Clicked="SavePost_Clicked" Grid.Row="3"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

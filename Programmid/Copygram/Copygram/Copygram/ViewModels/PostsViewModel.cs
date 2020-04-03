@@ -46,35 +46,6 @@ namespace Copygram.ViewModels
             {
                 Posts.Add(post);
             }
-            //for (int i = 0; i < 5; i++)
-            //{
-            //    Posts.Add(new Post()
-            //    {
-            //        Id = GetRandomId(),
-            //        PictureUrl = "https://i.picsum.photos/id/" + GetRandomId() + "/500/360.jpg",
-            //        Title = "GetRandomTitle()",
-            //        Date = GetRandomDate()
-            //    });
-            //}
         }
-        public DateTime GetRandomDate()
-        {
-            Random rnd = new Random();
-            DateTime start = new DateTime(1995, 1, 1, 10, 40, 20);
-            int range = (DateTime.UtcNow - start).Days;
-            var date = start.AddDays(rnd.Next(range)).AddHours(rnd.Next(range));
-            return date;
-        }
-        public int GetRandomId()
-        {
-            Random rnd = new Random();
-            var id = rnd.Next(1, 400);
-            return id;
-        }
-        //public string GetRandomTitle()
-        //{
-        //    //var fakeTitle = Faker.TextFaker.Sentence();
-        //    //return fakeTitle;
-        //}
     }
 }

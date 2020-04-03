@@ -1,4 +1,5 @@
 ﻿using Copygram.Models;
+using Copygram.Tabs;
 using SQLite;
 using System;
 using System.Collections.Generic;
@@ -23,16 +24,15 @@ namespace Copygram.Pages.Authentication
         {
             var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
             var db = new SQLiteConnection(dbPath);
-            db.CreateTable<SignUpUser>();
-
-            var item = new SignUpUser()
+            db.CreateTable<User>();
+            var item = new User()
             {
-                UserName = EntryUserName.Text,
+                Username = EntryUserName.Text,
                 Password = EntryUserPassword.Text,
                 Email = EntryUserEmail.Text
             };
             db.Insert(item);
-            if (item.UserName == null)
+            if (item.Username == null)
             {
                 DisplayAlert("Alert", "please enter Username", "ok");
             }
@@ -44,15 +44,11 @@ namespace Copygram.Pages.Authentication
             {
                 DisplayAlert("Alert", "please enter Email", "ok");
             }
-            if (item.UserName != null && item.Password != null && item.Email != null)
+            if (item.Username != null && item.Password != null && item.Email != null)
             {
                 Device.BeginInvokeOnMainThread(async () =>
                 {
-                    //var result = await this.DisplayAlert("Registration Complete", "User Registration Successful", "OK", "Cancel");
-                    //if (result)
-                    //{
-                        await Navigation.PushAsync(new LoginPage());
-                    //}
+                    App.Current.MainPage = new NavigationPage(new TabbedPage1());
                 });
             }
         }

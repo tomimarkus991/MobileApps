@@ -1,8 +1,6 @@
 ﻿using Copygram.Models;
 using SQLite;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Copygram.Data
@@ -14,6 +12,7 @@ namespace Copygram.Data
         {
             _dbContext = new SQLiteAsyncConnection(dbPath);
             _dbContext.CreateTableAsync<Post>().Wait();
+            _dbContext.CreateTableAsync<User>().Wait();
         }
         public async Task<List<Post>> GetPostsAsync()
         {
@@ -39,6 +38,19 @@ namespace Copygram.Data
         public async Task<int> DeletePostAsync(Post Post)
         {
             return await _dbContext.DeleteAsync(Post);
+        }
+
+        // Users
+        public async Task<int> SaveUserAsync(User User)
+        {
+            if (User.Id != 0)
+            {
+                return await _dbContext.UpdateAsync(User);
+            }
+            else
+            {
+                return await _dbContext.InsertAsync(User);
+            }
         }
     }
 }

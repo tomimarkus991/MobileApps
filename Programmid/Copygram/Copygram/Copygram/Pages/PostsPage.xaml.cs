@@ -21,8 +21,6 @@ namespace Copygram.Pages
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            //USE IF VIEWMODEL NOT WORK
-            //Posts_ListView.ItemsSource = Task.Run(async () => await App.dbContext.GetPostsAsync()).Result;
             (this.BindingContext as PostsViewModel)?.RefreshList();
         }
         private async void Posts_ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)

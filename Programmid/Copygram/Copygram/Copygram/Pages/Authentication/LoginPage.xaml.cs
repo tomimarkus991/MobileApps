@@ -28,7 +28,7 @@ namespace Copygram.Pages.Authentication
         {
             var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
             var db = new SQLiteConnection(dbPath);
-            var myQuery = db.Table<SignUpUser>().Where(u => u.UserName.Equals(EntryUser.Text) && u.Password.Equals(EntryPassword.Text)).FirstOrDefault();
+            var myQuery = db.Table<User>().Where(u => u.Email.Equals(EntryEmail.Text) && u.Password.Equals(EntryPassword.Text)).FirstOrDefault();
 
             if (myQuery != null)
             {
@@ -36,17 +36,9 @@ namespace Copygram.Pages.Authentication
             }
             else
             {
-                Device.BeginInvokeOnMainThread(async () =>
+                Device.BeginInvokeOnMainThread( () =>
                 {
-                    var result = await this.DisplayAlert("Error", "Username or Password wrong", "Yes", "Cancel");
-                    if (result)
-                    {
-                        await Navigation.PushAsync(new LoginPage());
-                    }
-                    else
-                    {
-                        await Navigation.PushAsync(new LoginPage());
-                    }
+                    DisplayAlert("Error", "Username or Password wrong", "ok");
                 });
             }
         }

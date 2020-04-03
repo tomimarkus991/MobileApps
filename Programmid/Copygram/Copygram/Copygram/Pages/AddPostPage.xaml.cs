@@ -16,7 +16,7 @@ namespace Copygram
             InitializeComponent();
         }
 
-        private async void TakePictureBtn_Clicked(object sender, EventArgs e)
+        private async void TakePicture_Clicked(object sender, EventArgs e)
         {
             var photo = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions() { });
 
@@ -24,7 +24,7 @@ namespace Copygram
                 Image.Source = photo.Path;
         }
 
-        private async void SavePostBtn_Clicked(object sender, EventArgs e)
+        private async void SavePost_Clicked(object sender, EventArgs e)
         {
             if (PostTitle.Text == "" && Image.Source.ToString() == "File: " || PostTitle.Text == "" || Image.Source.ToString() == "File: ")
             {
@@ -33,13 +33,15 @@ namespace Copygram
             else
             {
                 var post = new Post();
+                var user = (User)BindingContext;
                 BindingContext = post;
-                //var post = (Post)BindingContext;
                 post.Title = PostTitle.Text;
                 string currentPath = Image.Source.ToString();
                 string formattedPath = currentPath.Substring(6);
                 post.PictureUrl = formattedPath;
                 post.Date = DateTime.Now;
+                post.UserPhotoPath = user.ProfilePhotoPath;
+                post.Username = user.Username;
 
                 await App.dbContext.SavePostAsync(post);
                 await Navigation.PopAsync();

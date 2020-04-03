@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Model="clr-namespace:Copygram.Models"
+             mc:Ignorable="d"
+             x:Class="Copygram.Pages.ProfilePage">
+    <ContentPage.BindingContext>
+        <Model:User/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#2c3e50" Orientation="Vertical">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+            </Grid>
+            <StackLayout Grid.Row="2">
+                <Label Text="Current User:" FontSize="Large" TextColor="Black"/>
+                <Label x:Name="Username" Text="{Binding Username}" FontSize="Large" TextColor="Black"/>
+                <Entry x:Name="EnterUsername" Text="{Binding Username}" Placeholder="Change Username" FontSize="20" FontAttributes="Bold" TextColor="Black"></Entry>
+                <Image x:Name="ProfilePhoto" Source="{Binding ProfilePhotoPath}" WidthRequest="300" HeightRequest="300" BackgroundColor="WhiteSmoke" />
+            </StackLayout>
+            <Button Text="Change Profile Picture" x:Name="TakeProfilePicture" Clicked="TakeProfilePicture_Clicked" TextColor="Black" Grid.Row="3"></Button>
+            <Button Text="Save Profile" x:Name="SaveProfile" Clicked="SaveProfile_Clicked" TextColor="Black" Grid.Row="4"></Button>
+            <Button x:Name="Logout" VerticalOptions="EndAndExpand" Text="Logout" Clicked="Logout_Clicked" Grid.Row="5"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

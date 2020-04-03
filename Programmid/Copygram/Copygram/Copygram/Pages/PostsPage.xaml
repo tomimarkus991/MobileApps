@@ -20,11 +20,22 @@
                                     <RowDefinition/>
                                     <RowDefinition/>
                                     <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
                                 </Grid.RowDefinitions>
                             </Grid>
-                            <Label Text="{Binding Title}" TextColor="White" Grid.Row="0"></Label>
-                            <Label Text="{Binding Date}" TextColor="White" Grid.Row="1"></Label>
-                            <Image Source="{Binding PictureUrl}" HeightRequest="300" Grid.Row="2"/>
+                            <Frame Grid.Row="0"
+                                       CornerRadius="40" 
+                                       HeightRequest="80"
+                                       WidthRequest="80"
+                                       Padding="0"
+                                       IsClippedToBounds="True">
+                                <Image  Source="{Binding UserPhotoPath}" BackgroundColor="WhiteSmoke"></Image>
+                            </Frame>
+                            <Label Text="{Binding Username}" TextColor="White" Grid.Row="1"></Label>
+                            <Label Text="{Binding Title}" TextColor="White" Grid.Row="2"></Label>
+                            <Label Text="{Binding Date}" TextColor="White" Grid.Row="3"></Label>
+                            <Image Source="{Binding PictureUrl}" HeightRequest="300" Grid.Row="4"/>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
