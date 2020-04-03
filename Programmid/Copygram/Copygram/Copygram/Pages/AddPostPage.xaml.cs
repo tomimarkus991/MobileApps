@@ -26,7 +26,9 @@ namespace Copygram
 
         private async void SavePost_Clicked(object sender, EventArgs e)
         {
-            if (PostTitle.Text == "" && Image.Source.ToString() == "File: " || PostTitle.Text == "" || Image.Source.ToString() == "File: ")
+            if (PostTitle.Text == "" && Image.Source.ToString() == "File: " 
+                || PostTitle.Text == ""
+                || Image.Source.ToString() == "File: ")
             {
                 await DisplayAlert("dude", "Title and Picture are required!", "sorry mate");
             }
