@@ -41,6 +41,16 @@ namespace Copygram.Data
         }
 
         // Users
+        public async Task<List<User>> Users_GetUsersAsync()
+        {
+            return await _dbContext.Table<User>().ToListAsync();
+        }
+        public Task<User> Users_GetUserByNameAndEmail(string username, string email)
+        {
+            return _dbContext.Table<User>()
+                           .Where(x => x.Username.Equals(username) && x.Email.Equals(email))
+                           .FirstOrDefaultAsync();
+        }
         public async Task<int> SaveUserAsync(User User)
         {
             if (User.Id != 0)

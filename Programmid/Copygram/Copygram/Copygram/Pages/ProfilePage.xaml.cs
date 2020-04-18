@@ -16,8 +16,11 @@ namespace Copygram.Pages
         public ProfilePage()
         {
             InitializeComponent();
-            var user = (User)BindingContext;
-            EnterUsername.Text = user.Username;
+            //var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
+            //var db = new SQLiteConnection(dbPath);
+            //var myQuery = db.Table<User>().ToArray().GetValue(1);
+            //var item = (User)BindingContext;
+            //Username1.Text = item.Username;
         }
         private async void TakeProfilePicture_Clicked(object sender, EventArgs e)
         {
@@ -35,7 +38,7 @@ namespace Copygram.Pages
                 string formattedPath = currentPath.Substring(6);
                 user.Username = EnterUsername.Text.ToString();
                 user.ProfilePhotoPath = formattedPath;
-                Username.Text = EnterUsername.Text.ToString();
+                Username1.Text = EnterUsername.Text.ToString();
 
                 await App.dbContext.SaveUserAsync(user);
                 await DisplayAlert("Success", "Update Complete", "Yesss!");

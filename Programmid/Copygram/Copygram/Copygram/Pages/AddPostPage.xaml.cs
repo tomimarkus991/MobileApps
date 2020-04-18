@@ -34,9 +34,11 @@ namespace Copygram
             }
             else
             {
+                //var post = new Post();
+                //var user = (User)BindingContext;
+                //BindingContext = post;
                 var post = new Post();
                 var user = (User)BindingContext;
-                BindingContext = post;
                 post.Title = PostTitle.Text;
                 string currentPath = Image.Source.ToString();
                 string formattedPath = currentPath.Substring(6);

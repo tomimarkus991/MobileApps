@@ -23,7 +23,7 @@
             </Grid>
             <StackLayout Grid.Row="2">
                 <Label Text="Current User:" FontSize="Large" TextColor="Black"/>
-                <Label x:Name="Username" Text="{Binding Username}" FontSize="Large" TextColor="Black"/>
+                <Label x:Name="Username1" Text="{Binding Username}" FontSize="Large" TextColor="Black"/>
                 <Entry x:Name="EnterUsername" Text="{Binding Username}" Placeholder="Change Username" FontSize="20" FontAttributes="Bold" TextColor="Black"></Entry>
                 <Image x:Name="ProfilePhoto" Source="{Binding ProfilePhotoPath}" WidthRequest="300" HeightRequest="300" BackgroundColor="WhiteSmoke" />
             </StackLayout>
