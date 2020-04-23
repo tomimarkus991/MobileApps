@@ -30,7 +30,7 @@
                                        WidthRequest="80"
                                        Padding="0"
                                        IsClippedToBounds="True">
-                                <Image  Source="{Binding UserPhotoPath}" BackgroundColor="WhiteSmoke"></Image>
+                                <Image  Source="{Binding UserPhotoPath}" HeightRequest="40" BackgroundColor="WhiteSmoke"></Image>
                             </Frame>
                             <Label Text="{Binding Username}" TextColor="White" Grid.Row="1"></Label>
                             <Label Text="{Binding Title}" TextColor="White" Grid.Row="2"></Label>

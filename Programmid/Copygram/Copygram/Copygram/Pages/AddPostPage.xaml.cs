@@ -34,18 +34,14 @@ namespace Copygram
             }
             else
             {
-                //var post = new Post();
-                //var user = (User)BindingContext;
-                //BindingContext = post;
                 var post = new Post();
-                var user = (User)BindingContext;
                 post.Title = PostTitle.Text;
                 string currentPath = Image.Source.ToString();
                 string formattedPath = currentPath.Substring(6);
                 post.PictureUrl = formattedPath;
                 post.Date = DateTime.Now;
-                post.UserPhotoPath = user.ProfilePhotoPath;
-                post.Username = user.Username;
+                post.UserPhotoPath = formattedPath;
+                post.Username = PostTitle.Text;
 
                 await App.dbContext.SavePostAsync(post);
                 await Navigation.PopAsync();
